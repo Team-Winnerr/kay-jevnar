@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   StyleSheet,
   ActivityIndicator,
-  SafeAreaView,
   Alert
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { listenToAllOrders, updateOrderStatus } from '../../services/orderService';
 import { Order, OrderStatus } from '../../types';
 import { StatusBadge } from '../../components/StatusBadge';
@@ -55,6 +55,7 @@ export const AdminOrdersScreen: React.FC<AdminOrdersScreenProps> = ({ onSwitchTo
       case 'Ready':
         return { label: '✅ Handover Completed', next: 'Completed', color: '#4B5563' };
       case 'Completed':
+      default:
         return null;
     }
   };
@@ -127,7 +128,14 @@ export const AdminOrdersScreen: React.FC<AdminOrdersScreenProps> = ({ onSwitchTo
                 {/* Order Top Line */}
                 <View style={styles.orderHeader}>
                   <View>
-                    <Text style={styles.tokenText}>{item.orderNumber}</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                      <Text style={styles.tokenText}>{item.orderNumber}</Text>
+                      <View style={{ backgroundColor: '#FEF3C7', borderColor: '#F59E0B', borderWidth: 1, paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 }}>
+                        <Text style={{ fontSize: 11, fontWeight: '900', color: '#92400E' }}>
+                          OTP: {item.pickupOtp || item.orderNumber.replace('KJ-', '')}
+                        </Text>
+                      </View>
+                    </View>
                     <Text style={styles.customerName}>
                       {item.userName} ({timeAgo} mins ago)
                     </Text>
@@ -141,7 +149,7 @@ export const AdminOrdersScreen: React.FC<AdminOrdersScreenProps> = ({ onSwitchTo
                     <View key={idx} style={styles.itemRow}>
                       <Text style={styles.itemQty}>{quantity}x</Text>
                       <Text style={styles.itemName}>{menuItem.name}</Text>
-                      <Text style={styles.itemPrice}>₹{menuItem.price * quantity}</Text>
+                      <Text style={styles.itemPrice}>₹{(menuItem.priceINR || menuItem.price) * quantity}</Text>
                     </View>
                   ))}
 

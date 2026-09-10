@@ -31,7 +31,11 @@ build/
 *.p12
 *.key
 *.mobileprovision
-*.orig.*
 web-build/
 *.zip
+
+# Temporary scratch files and dumps
+scratch_*
+bitejoy_site/
+stitch_extracted/
 

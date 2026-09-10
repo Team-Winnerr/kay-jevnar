@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { MenuItem } from '../types';
 import { useCart } from '../context/CartContext';
+import { getItemPriceINR } from '../utils/price';
+import { getLocalFoodAsset } from '../utils/image';
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -17,14 +19,14 @@ export const MenuItemCard: React.FC<MenuItemCardProps> = ({ item }) => {
       {/* Image with BiteJoy Floating Badge & Price Tag */}
       <View style={styles.imageWrapper}>
         <Image
-          source={{ uri: item.imageUrl }}
+          source={getLocalFoodAsset(item.name)}
           style={styles.image}
           resizeMode="cover"
         />
 
         {/* Floating Price Pill (BiteJoy signature) */}
         <View style={styles.floatingPricePill}>
-          <Text style={styles.floatingPriceText}>₹{item.price}</Text>
+          <Text style={styles.floatingPriceText}>₹{getItemPriceINR(item)}</Text>
         </View>
 
         {/* Veg / Non-Veg Indicator */}

@@ -15,174 +15,278 @@ import { MenuItem } from '../types';
 const MENU_COLLECTION = 'menu';
 
 export const INITIAL_MENU_ITEMS: Omit<MenuItem, 'id'>[] = [
+  // --- BURGERS (100% Pure Veg) ---
   {
-    name: 'Double Loaded Cheeseburger',
-    category: 'Quick Bites',
-    price: 130,
-    description: 'Juicy patties layered with melted cheddar, crisp lettuce, caramelized onions, and signature BiteJoy sauce.',
-    imageUrl: 'https://cdn.prod.website-files.com/678b0c0393efc5b8320e8818/678fe621e2a33326f65cbd06_cheeseburger-with-double-beef.png',
+    name: 'Paneer Tikka Burger',
+    category: 'Burgers',
+    price: 9.90,
+    priceINR: 199,
+    description: 'Charred spiced paneer slab, mint chutney mayo, crisp pickled onions & melted cheddar on toasted brioche.',
+    imageUrl: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80',
     isAvailable: true,
-    isVeg: false,
+    isVeg: true,
     rating: 4.9,
+    badge: 'BESTSELLER',
+    stockCountRemaining: 24,
     preparationTimeMinutes: 10
   },
   {
-    name: 'Crispy Fries Cone',
-    category: 'Snacks',
-    price: 60,
-    description: 'Golden, extra crunchy potato fries tossed in peri-peri seasoning, served with creamy garlic dip.',
-    imageUrl: 'https://cdn.prod.website-files.com/678b0c0393efc5b8320e8818/678b0c0393efc5b8320e88fe_fries-cone-yellow-background.png',
+    name: 'Smash Veggie Burger',
+    category: 'Burgers',
+    price: 8.90,
+    priceINR: 179,
+    description: 'Crispy spiced potato & sweet corn smash patty with spicy peri peri sauce and crunchy lettuce.',
+    imageUrl: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80',
     isAvailable: true,
     isVeg: true,
     rating: 4.8,
-    preparationTimeMinutes: 6
+    badge: 'CRISPY',
+    stockCountRemaining: 18,
+    preparationTimeMinutes: 8
   },
   {
-    name: 'Crunchy Onion Rings',
-    category: 'Snacks',
-    price: 75,
-    description: 'Crisp batter-dipped sweet onion rings fried golden brown, served with smoky BBQ dip.',
-    imageUrl: 'https://cdn.prod.website-files.com/678b0c0393efc5b8320e8818/678b0c0393efc5b8320e88ef_onion-rings-blue-box.png',
+    name: 'Classic Veggie Cheeseburger',
+    category: 'Burgers',
+    price: 8.50,
+    priceINR: 169,
+    description: 'The all-time campus classic grilled potato & herb patty with double cheese, mustard relish and pickles.',
+    imageUrl: 'https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=600&q=80',
     isAvailable: true,
     isVeg: true,
-    rating: 4.7,
+    rating: 4.8,
+    badge: 'FAVORITE',
+    stockCountRemaining: 30,
     preparationTimeMinutes: 7
   },
   {
-    name: 'Crispy Samosa Plate (2 pcs)',
-    category: 'Snacks',
-    price: 30,
-    description: 'Crisp golden pastry stuffed with spiced potatoes and peas, served with mint & tamarind chutney.',
-    imageUrl: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80',
+    name: 'Spicy Paneer Zinger Burger',
+    category: 'Burgers',
+    price: 10.50,
+    priceINR: 219,
+    description: 'Extra crispy battered cottage cheese block tossed in fiery ghost chili spice with crunchy coleslaw.',
+    imageUrl: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80',
     isAvailable: true,
     isVeg: true,
     rating: 4.9,
-    preparationTimeMinutes: 4
+    badge: 'HOT 🔥',
+    stockCountRemaining: 12,
+    preparationTimeMinutes: 10
   },
+
+  // --- SIDES ---
   {
-    name: 'Special Masala Chai',
-    category: 'Beverages',
-    price: 20,
-    description: 'Freshly brewed aromatic tea infused with crushed ginger, cardamom, and fresh milk.',
-    imageUrl: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80',
+    name: 'Waffle Fries Cone (Large)',
+    category: 'Sides',
+    price: 4.90,
+    priceINR: 110,
+    description: 'Crispy criss-cross cut potato waffle fries dusted with smoky peri-peri seasoning and garlic dip.',
+    imageUrl: 'https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80',
     isAvailable: true,
     isVeg: true,
     rating: 4.9,
-    preparationTimeMinutes: 3
-  },
-  {
-    name: 'Thick Cold Coffee with Ice Cream',
-    category: 'Beverages',
-    price: 60,
-    description: 'Rich blended espresso with creamy vanilla ice cream, chocolate drizzle, and roasted coffee dust.',
-    imageUrl: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=600&q=80',
-    isAvailable: true,
-    isVeg: true,
-    rating: 4.8,
+    badge: 'CRISPY',
+    stockCountRemaining: 35,
     preparationTimeMinutes: 5
   },
   {
-    name: 'Punjabi Chole Bhature Combo',
-    category: 'Main Course',
-    price: 120,
-    description: 'Two fluffy piping hot bhatures served with spiced chickpea curry, pickled onions, and green chili.',
-    imageUrl: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=600&q=80',
+    name: 'Crispy Onion Rings',
+    category: 'Sides',
+    price: 4.50,
+    priceINR: 99,
+    description: 'Golden beer-battered thick sweet onion rings served steaming hot with tangy dipping sauce.',
+    imageUrl: 'https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=600&q=80',
+    isAvailable: true,
+    isVeg: true,
+    rating: 4.6,
+    stockCountRemaining: 15,
+    preparationTimeMinutes: 6
+  },
+  {
+    name: 'Classic Salted French Fries',
+    category: 'Sides',
+    price: 3.90,
+    priceINR: 80,
+    description: 'Double-fried hand-cut golden Russet potato fries tossed in fine Himalayan rock salt.',
+    imageUrl: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80',
+    isAvailable: true,
+    isVeg: true,
+    rating: 4.7,
+    stockCountRemaining: 40,
+    preparationTimeMinutes: 4
+  },
+
+  // --- DESSERTS ---
+  {
+    name: 'Strawberry Dream Cake',
+    category: 'Desserts',
+    price: 5.50,
+    priceINR: 130,
+    description: 'Layered fluffy sponge cake filled with Mahabaleshwar fresh strawberry compote and whipped cream.',
+    imageUrl: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=600&q=80',
     isAvailable: true,
     isVeg: true,
     rating: 4.9,
-    preparationTimeMinutes: 12
+    badge: 'SWEET',
+    stockCountRemaining: 10,
+    preparationTimeMinutes: 3
   },
   {
-    name: 'Royal Paneer Biryani',
-    category: 'Main Course',
-    price: 150,
-    description: 'Fragrant basmati rice layered with marinated paneer cubes, saffron, and aromatic spices. Served with raita.',
-    imageUrl: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80',
-    isAvailable: true,
-    isVeg: true,
-    rating: 4.8,
-    preparationTimeMinutes: 15
-  },
-  {
-    name: 'Pink Strawberry Velvet Cake',
+    name: 'Chocolate Lava Truffle',
     category: 'Desserts',
-    price: 85,
-    description: 'Layers of moist sponge topped with light strawberry cream, white chocolate curls, and glaze.',
-    imageUrl: 'https://cdn.prod.website-files.com/678b0c0393efc5b8320e8818/678b0c0393efc5b8320e8904_pink-strawberry-cake-portion-pink-background.png',
+    price: 5.90,
+    priceINR: 140,
+    description: 'Warm molten dark chocolate cake served with vanilla bean soft serve scoop.',
+    imageUrl: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80',
     isAvailable: true,
     isVeg: true,
     rating: 4.9,
-    preparationTimeMinutes: 2
+    stockCountRemaining: 8,
+    preparationTimeMinutes: 4
   },
+
+  // --- DRINKS ---
   {
-    name: 'Glazed Sugar Doughnuts (2 pcs)',
-    category: 'Desserts',
-    price: 70,
-    description: 'Soft pillowy golden doughnuts coated in a sweet sugar glaze and rainbow sprinkles.',
-    imageUrl: 'https://cdn.prod.website-files.com/678b0c0393efc5b8320e8818/678b0c0393efc5b8320e8905_top-view-arrangement-with-doughnuts-blue-background.png',
+    name: 'Cold Coffee with Ice Cream',
+    category: 'Drinks',
+    price: 3.90,
+    priceINR: 90,
+    description: 'Rich thick blended espresso cold coffee topped with a creamy scoop of vanilla ice cream.',
+    imageUrl: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80',
     isAvailable: true,
     isVeg: true,
     rating: 4.8,
+    badge: 'POPULAR',
+    stockCountRemaining: 25,
+    preparationTimeMinutes: 3
+  },
+  {
+    name: 'Fresh Mint Lemon Soda',
+    category: 'Drinks',
+    price: 2.90,
+    priceINR: 60,
+    description: 'Sparkling refreshing soda infused with crushed mint leaves, fresh lime juice and black salt.',
+    imageUrl: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80',
+    isAvailable: true,
+    isVeg: true,
+    rating: 4.7,
+    stockCountRemaining: 30,
     preparationTimeMinutes: 2
   }
 ];
 
-export const listenToMenuItems = (callback: (items: MenuItem[]) => void) => {
-  const menuRef = collection(db, MENU_COLLECTION);
-  return onSnapshot(menuRef, (snapshot) => {
-    const items: MenuItem[] = [];
-    snapshot.forEach((docSnap) => {
-      items.push({ id: docSnap.id, ...(docSnap.data() as Omit<MenuItem, 'id'>) });
-    });
-    // Sort by name or category
-    callback(items);
-  }, (err) => {
-    console.warn('Error listening to menu items:', err);
-  });
-};
-
-export const seedInitialMenuIfEmpty = async (): Promise<boolean> => {
+export const seedInitialMenuIfEmpty = async (): Promise<void> => {
   try {
-    const menuRef = collection(db, MENU_COLLECTION);
-    const existing = await getDocs(menuRef);
-    if (existing.empty) {
-      for (const item of INITIAL_MENU_ITEMS) {
-        const newDoc = doc(menuRef);
-        await setDoc(newDoc, {
-          ...item,
-          createdAt: Date.now()
-        });
-      }
-      return true;
+    const snap = await getDocs(collection(db, MENU_COLLECTION));
+    const names = snap.docs.map((d) => d.data().name);
+    const hasDuplicates = new Set(names).size !== names.length;
+
+    const needsReseed =
+      snap.empty ||
+      hasDuplicates ||
+      snap.docs.length > 15 ||
+      snap.docs.some((docSnap) => {
+        const data = docSnap.data();
+        return (
+          !data.priceINR ||
+          data.price > 50 ||
+          (data.imageUrl && (data.imageUrl.includes('cdn') || data.imageUrl.includes('website-files')))
+        );
+      });
+
+    if (needsReseed) {
+      console.log('Detected stale, broken, or duplicated menu data. Auto-cleaning menu...');
+      await forceReseedMenu();
     }
-    return false;
   } catch (error) {
-    console.error('Error seeding initial menu:', error);
-    return false;
+    console.warn('Could not seed menu to Firestore:', error);
   }
 };
 
-export const addMenuItem = async (item: Omit<MenuItem, 'id'>): Promise<string> => {
-  const menuRef = collection(db, MENU_COLLECTION);
-  const newDoc = doc(menuRef);
-  await setDoc(newDoc, {
+/** Wipes ALL existing menu items and re-seeds with the canonical INITIAL_MENU_ITEMS.
+ *  Call this from the admin panel when images or item data need a full refresh. */
+export const forceReseedMenu = async (): Promise<void> => {
+  try {
+    // 1. Delete every existing document in the menu collection
+    const snap = await getDocs(collection(db, MENU_COLLECTION));
+    const deletions = snap.docs.map((d) => deleteDoc(doc(db, MENU_COLLECTION, d.id)));
+    await Promise.all(deletions);
+
+    // 2. Re-seed with the updated INITIAL_MENU_ITEMS (local /items/ images)
+    for (const item of INITIAL_MENU_ITEMS) {
+      const itemRef = doc(collection(db, MENU_COLLECTION));
+      await setDoc(itemRef, {
+        ...item,
+        id: itemRef.id,
+        createdAt: Date.now()
+      });
+    }
+  } catch (error) {
+    console.error('forceReseedMenu failed:', error);
+    throw error;
+  }
+};
+
+
+export const listenToMenuItems = (callback: (items: MenuItem[]) => void): (() => void) => {
+  // Trigger automatic check and repair if stale/duplicate data exists in Firestore
+  seedInitialMenuIfEmpty().catch((err) => console.warn('Auto-reseed check warning:', err));
+
+  const q = query(collection(db, MENU_COLLECTION), orderBy('name'));
+  return onSnapshot(
+    q,
+    (snapshot) => {
+      if (snapshot.empty) {
+        callback(
+          INITIAL_MENU_ITEMS.map((item, idx) => ({
+            ...item,
+            id: `seed-item-${idx}`,
+            createdAt: Date.now()
+          }))
+        );
+        return;
+      }
+      const items: MenuItem[] = [];
+      const seenNames = new Set<string>();
+      snapshot.forEach((docSnap) => {
+        const data = docSnap.data() as Omit<MenuItem, 'id'>;
+        if (data.name && !seenNames.has(data.name)) {
+          seenNames.add(data.name);
+          items.push({ id: docSnap.id, ...data });
+        }
+      });
+      callback(items);
+    },
+    (err) => {
+      console.warn('Firestore offline, fallback to local initial menu:', err);
+      callback(
+        INITIAL_MENU_ITEMS.map((item, idx) => ({
+          ...item,
+          id: `local-item-${idx}`,
+          createdAt: Date.now()
+        }))
+      );
+    }
+  );
+};
+
+export const addMenuItem = async (item: Omit<MenuItem, 'id' | 'createdAt'>): Promise<string> => {
+  const itemRef = doc(collection(db, MENU_COLLECTION));
+  await setDoc(itemRef, {
     ...item,
+    id: itemRef.id,
     createdAt: Date.now()
   });
-  return newDoc.id;
+  return itemRef.id;
 };
 
-export const updateMenuItem = async (id: string, updates: Partial<MenuItem>): Promise<void> => {
-  const itemDoc = doc(db, MENU_COLLECTION, id);
-  await updateDoc(itemDoc, updates);
-};
-
-export const toggleItemAvailability = async (id: string, isAvailable: boolean): Promise<void> => {
-  const itemDoc = doc(db, MENU_COLLECTION, id);
-  await updateDoc(itemDoc, { isAvailable });
+export const updateMenuItemAvailability = async (id: string, isAvailable: boolean): Promise<void> => {
+  const itemRef = doc(db, MENU_COLLECTION, id);
+  await updateDoc(itemRef, { isAvailable });
 };
 
 export const deleteMenuItem = async (id: string): Promise<void> => {
-  const itemDoc = doc(db, MENU_COLLECTION, id);
-  await deleteDoc(itemDoc);
+  const itemRef = doc(db, MENU_COLLECTION, id);
+  await deleteDoc(itemRef);
 };
+
+export const toggleItemAvailability = updateMenuItemAvailability;

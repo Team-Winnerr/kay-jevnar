@@ -1,9 +1,11 @@
 import React, { createContext, useContext, useState, useMemo } from 'react';
 import { MenuItem, CartItem } from '../types';
+import { getItemPriceINR } from '../utils/price';
 
 interface CartContextType {
   items: CartItem[];
   addToCart: (item: MenuItem) => void;
+  addItem: (item: MenuItem) => void;
   removeFromCart: (itemId: string) => void;
   updateQuantity: (itemId: string, quantity: number) => void;
   clearCart: () => void;
@@ -16,6 +18,7 @@ interface CartContextType {
 const CartContext = createContext<CartContextType>({
   items: [],
   addToCart: () => {},
+  addItem: () => {},
   removeFromCart: () => {},
   updateQuantity: () => {},
   clearCart: () => {},
@@ -62,7 +65,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const { itemCount, subtotal, tax, total } = useMemo(() => {
     const count = items.reduce((acc, ci) => acc + ci.quantity, 0);
-    const sub = items.reduce((acc, ci) => acc + ci.menuItem.price * ci.quantity, 0);
+    const sub = items.reduce((acc, ci) => acc + getItemPriceINR(ci.menuItem) * ci.quantity, 0);
     // 5% standard cafeteria tax
     const t = Math.round(sub * 0.05);
     return {
@@ -78,6 +81,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       value={{
         items,
         addToCart,
+        addItem: addToCart,
         removeFromCart,
         updateQuantity,
         clearCart,

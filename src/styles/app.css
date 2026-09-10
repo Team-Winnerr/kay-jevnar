@@ -1,0 +1,196 @@
+@import './bitejoy.css';
+
+/* Ensure the full page wrapper preserves BiteJoy's native dimensions and styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: var(--yellow) !important;
+  color: var(--black) !important;
+}
+
+/* Hide Webflow badge */
+.w-webflow-badge,
+a[href*="webflow.com?utm_campaign=brandjs"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Webflow Tabs Behavior */
+.tab-content-item {
+  display: none;
+}
+
+.tab-content-item.w--tab-active {
+  display: block;
+  opacity: 1;
+  animation: tabFadeIn 0.3s ease-in-out;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Webflow Accordion Expand/Collapse */
+.accordion-content-wrap {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-content-item.is-open .accordion-content-wrap {
+  max-height: 300px;
+}
+
+.accordion-content-item:not(.is-open) .accordion-content-wrap {
+  max-height: 0;
+}
+
+.accordion-content-item.is-open .plus-line.vertical {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.plus-line.vertical {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Cart Drawer Animation */
+.cart-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  animation: backdropFade 0.25s ease-out;
+}
+
+@keyframes backdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cart-modal-sheet {
+  background-color: var(--yellow);
+  width: 100%;
+  max-width: 460px;
+  height: 100vh;
+  padding: 32px 24px;
+  overflow-y: auto;
+  box-shadow: -8px 0 30px rgba(0,0,0,0.2);
+  border-left: 4px solid var(--black);
+  animation: sheetSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes sheetSlide {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Webflow Navigation Menu overlay */
+.nav-menu.w--open {
+  display: block !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--yellow);
+  border-bottom: 4px solid var(--black);
+  padding: 24px;
+  z-index: 999;
+}
+
+/* ========================================================
+   Neo-Brutalist Design Tokens & Utilities from Stitch
+   ======================================================== */
+.neo-border {
+  border: 3px solid #000000;
+}
+.neo-border-sm {
+  border: 2px solid #000000;
+}
+.neo-border-heavy {
+  border: 3.5px solid #000000;
+}
+.neo-border-thick {
+  border: 4px solid #000000;
+}
+
+.neo-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+.neo-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+.neo-shadow-lg {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.neo-press:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+@keyframes candyStripes {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 0; }
+}
+
+.animated-stripes {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.35) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.35) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  animation: candyStripes 1s linear infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+}
+

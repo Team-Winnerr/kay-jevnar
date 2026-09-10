@@ -5,9 +5,9 @@ import {
   FlatList,
   TouchableOpacity,
   StyleSheet,
-  ActivityIndicator,
-  SafeAreaView
+  ActivityIndicator
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuth } from '../../context/AuthContext';
 import { listenToStudentOrders } from '../../services/orderService';
 import { Order } from '../../types';

@@ -5,14 +5,15 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  ActivityIndicator,
-  SafeAreaView
+  ActivityIndicator
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { Order } from '../../types';
 import { OrderProgressTracker } from '../../components/OrderProgressTracker';
 import { StatusBadge } from '../../components/StatusBadge';
+import { getItemPriceINR } from '../../utils/price';
 
 interface OrderTrackingScreenProps {
   orderId: string;
@@ -105,11 +106,29 @@ export const OrderTrackingScreen: React.FC<OrderTrackingScreenProps> = ({
 
         {/* Big Pickup Token Card */}
         <View style={styles.tokenCard}>
-          <Text style={styles.tokenLabel}>CANTEEN PICKUP TOKEN</Text>
+          <Text style={styles.tokenLabel}>CANTEEN TICKET NUMBER</Text>
           <Text style={styles.tokenNumber}>{order.orderNumber}</Text>
           <View style={styles.statusBadgeWrapper}>
             <StatusBadge status={order.status} size="large" />
           </View>
+        </View>
+
+        {/* Anti-Theft 4-Digit Pickup OTP Card */}
+        <View style={styles.otpCard}>
+          <View style={styles.otpHeaderBadge}>
+            <Text style={styles.otpHeaderBadgeText}>SHOW AT CANTEEN COUNTER</Text>
+          </View>
+          <Text style={styles.otpTitle}>YOUR 4-DIGIT PICKUP OTP</Text>
+          <View style={styles.otpDigitsRow}>
+            {(order.pickupOtp || order.orderNumber.replace('KJ-', '')).split('').map((digit, idx) => (
+              <View key={idx} style={styles.otpDigitBox}>
+                <Text style={styles.otpDigitText}>{digit}</Text>
+              </View>
+            ))}
+          </View>
+          <Text style={styles.otpSubtext}>
+            Kitchen staff will verify this PIN before handing over your food tray.
+          </Text>
         </View>
 
         {/* 4-Step Visual Tracker */}
@@ -139,7 +158,7 @@ export const OrderTrackingScreen: React.FC<OrderTrackingScreenProps> = ({
             <View key={idx} style={styles.summaryItemRow}>
               <Text style={styles.summaryQty}>{quantity}x</Text>
               <Text style={styles.summaryName}>{menuItem.name}</Text>
-              <Text style={styles.summaryPrice}>₹{menuItem.price * quantity}</Text>
+              <Text style={styles.summaryPrice}>₹{getItemPriceINR(menuItem) * quantity}</Text>
             </View>
           ))}
 
@@ -306,6 +325,73 @@ const styles = StyleSheet.create({
   },
   statusBadgeWrapper: {
     marginTop: 4
+  },
+  otpCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    padding: 20,
+    alignItems: 'center',
+    marginBottom: 16,
+    borderWidth: 2,
+    borderColor: '#111827',
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 4
+  },
+  otpHeaderBadge: {
+    backgroundColor: '#BA2424',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 20,
+    marginBottom: 8
+  },
+  otpHeaderBadgeText: {
+    color: '#FFFFFF',
+    fontSize: 10,
+    fontWeight: '900',
+    letterSpacing: 1
+  },
+  otpTitle: {
+    fontSize: 12,
+    fontWeight: '800',
+    color: '#4B5563',
+    letterSpacing: 1,
+    marginBottom: 8
+  },
+  otpDigitsRow: {
+    flexDirection: 'row',
+    gap: 10,
+    marginVertical: 6
+  },
+  otpDigitBox: {
+    width: 52,
+    height: 60,
+    backgroundColor: '#FED97C',
+    borderRadius: 14,
+    borderWidth: 2.5,
+    borderColor: '#111827',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000000',
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 2
+  },
+  otpDigitText: {
+    fontSize: 28,
+    fontWeight: '900',
+    color: '#111827'
+  },
+  otpSubtext: {
+    fontSize: 11,
+    color: '#6B7280',
+    textAlign: 'center',
+    marginTop: 8,
+    fontWeight: '600',
+    paddingHorizontal: 10
   },
   trackerCard: {
     backgroundColor: '#FFFFFF',

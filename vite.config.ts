@@ -1,0 +1,19 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  define: {
+    'process.env': {}
+  },
+  resolve: {
+    alias: {
+      'react-native': 'react-native-web'
+    }
+  },
+  envPrefix: ['VITE_', 'EXPO_PUBLIC_'],
+  server: {
+    port: 5173,
+    host: true
+  }
+});

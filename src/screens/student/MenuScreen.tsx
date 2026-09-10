@@ -7,8 +7,9 @@ import {
   TouchableOpacity,
   StyleSheet,
   ActivityIndicator,
-  SafeAreaView
+  Image
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { MenuItem, FoodCategory } from '../../types';
@@ -61,7 +62,11 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
       <View style={styles.topBar}>
         <View>
           <Text style={styles.canteenTag}>CAMPUS CANTEEN</Text>
-          <Text style={styles.appName}>Kay Jevnar 🍱</Text>
+          <Image
+            source={require('../../../assets/logo.png')}
+            style={{ width: 120, height: 38 }}
+            resizeMode="contain"
+          />
         </View>
 
         <View style={styles.topActions}>

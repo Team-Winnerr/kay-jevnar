@@ -9,7 +9,8 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  Alert
+  Alert,
+  Image
 } from 'react-native';
 import { loginUser, registerUser } from '../../services/authService';
 
@@ -63,55 +64,31 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onSuccess }) => {
     }
   };
 
-  // Quick Demo Logins for Hackathon judges & testers
-  const handleQuickLogin = async (demoRole: 'student' | 'admin') => {
-    setLoading(true);
-    setError('');
-    const demoEmail = demoRole === 'admin' ? 'admin@kayjevnar.edu' : 'student@kayjevnar.edu';
-    const demoPass = 'Pass123!';
-    try {
-      try {
-        await loginUser(demoEmail, demoPass);
-      } catch (e: any) {
-        // Auto register demo user if not exists
-        await registerUser(
-          demoRole === 'admin' ? 'Canteen Manager' : 'Aryan Sharma',
-          demoEmail,
-          demoPass,
-          demoRole,
-          demoRole === 'student' ? '2026CS108' : undefined
-        );
-      }
-      onSuccess();
-    } catch (err: any) {
-      setError(err.message || 'Quick login failed. Make sure Authentication is enabled in Firebase.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       style={styles.container}
     >
       <ScrollView contentContainerStyle={styles.scroll}>
-        {/* Branding */}
+        {/* Branding with Official Logo */}
         <View style={styles.brandHeader}>
-          <Text style={styles.emojiLogo}>🍱</Text>
-          <Text style={styles.brandTitle}>Kay Jevnar</Text>
+          <Image
+            source={require('../../../assets/logo.png')}
+            style={styles.logoImage}
+            resizeMode="contain"
+          />
           <Text style={styles.brandSubtitle}>Campus Food & Canteen Ordering System</Text>
         </View>
 
         {/* Card */}
         <View style={styles.card}>
           <Text style={styles.cardTitle}>
-            {isRegister ? 'Create Account' : 'Welcome Back'}
+            {isRegister ? 'Create Account' : (role === 'admin' ? 'Canteen Admin Portal' : 'Welcome Back')}
           </Text>
           <Text style={styles.cardSubtitle}>
             {isRegister
               ? 'Join to skip long canteen queues'
-              : 'Sign in to order your food'}
+              : (role === 'admin' ? 'Sign in to access KDS & inventory controls' : 'Sign in to order your food')}
           </Text>
 
           {error ? (
@@ -120,32 +97,41 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onSuccess }) => {
             </View>
           ) : null}
 
+          {/* Role Picker (Always visible for both Sign In and Register) */}
+          <View style={styles.rolePicker}>
+            <TouchableOpacity
+              style={[styles.roleTab, role === 'student' && styles.roleTabActive]}
+              onPress={() => {
+                setRole('student');
+                if (email === 'admin@kayjevnar.edu') setEmail('');
+              }}
+            >
+              <Text
+                style={[styles.roleTabText, role === 'student' && styles.roleTabTextActive]}
+              >
+                🎓 Student
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.roleTab, role === 'admin' && styles.roleTabActive]}
+              onPress={() => {
+                setRole('admin');
+                if (!email) {
+                  setEmail('admin@kayjevnar.edu');
+                  setPassword('Pass123!');
+                }
+              }}
+            >
+              <Text
+                style={[styles.roleTabText, role === 'admin' && styles.roleTabTextActive]}
+              >
+                👨‍🍳 Canteen Admin
+              </Text>
+            </TouchableOpacity>
+          </View>
+
           {isRegister && (
             <>
-              {/* Role Picker */}
-              <View style={styles.rolePicker}>
-                <TouchableOpacity
-                  style={[styles.roleTab, role === 'student' && styles.roleTabActive]}
-                  onPress={() => setRole('student')}
-                >
-                  <Text
-                    style={[styles.roleTabText, role === 'student' && styles.roleTabTextActive]}
-                  >
-                    🎓 Student
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={[styles.roleTab, role === 'admin' && styles.roleTabActive]}
-                  onPress={() => setRole('admin')}
-                >
-                  <Text
-                    style={[styles.roleTabText, role === 'admin' && styles.roleTabTextActive]}
-                  >
-                    👨‍🍳 Canteen Admin
-                  </Text>
-                </TouchableOpacity>
-              </View>
-
               <Text style={styles.label}>Full Name</Text>
               <TextInput
                 style={styles.input}
@@ -218,27 +204,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onSuccess }) => {
             </Text>
           </TouchableOpacity>
         </View>
-
-        {/* Hackathon Fast Demo Fillers */}
-        <View style={styles.demoSection}>
-          <Text style={styles.demoHeader}>⚡ FAST HACKATHON DEMO LOGINS</Text>
-          <View style={styles.demoButtonsRow}>
-            <TouchableOpacity
-              style={styles.demoButton}
-              onPress={() => handleQuickLogin('student')}
-              disabled={loading}
-            >
-              <Text style={styles.demoButtonText}>Demo Student</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[styles.demoButton, styles.demoButtonAdmin]}
-              onPress={() => handleQuickLogin('admin')}
-              disabled={loading}
-            >
-              <Text style={styles.demoButtonText}>Demo Admin</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -258,23 +223,18 @@ const styles = StyleSheet.create({
   },
   brandHeader: {
     alignItems: 'center',
-    marginBottom: 24
+    marginBottom: 20
   },
-  emojiLogo: {
-    fontSize: 52,
-    marginBottom: 8
-  },
-  brandTitle: {
-    fontSize: 28,
-    fontWeight: '900',
-    color: '#111827',
-    letterSpacing: -0.5
+  logoImage: {
+    width: 250,
+    height: 90,
+    alignSelf: 'center',
+    marginBottom: 6
   },
   brandSubtitle: {
-    fontSize: 14,
+    fontSize: 13,
     color: '#6B7280',
-    marginTop: 4,
-    fontWeight: '500'
+    fontWeight: '600'
   },
   card: {
     backgroundColor: '#FFFFFF',
@@ -387,34 +347,5 @@ const styles = StyleSheet.create({
     color: '#4B5563',
     fontSize: 13,
     fontWeight: '600'
-  },
-  demoSection: {
-    marginTop: 24,
-    alignItems: 'center'
-  },
-  demoHeader: {
-    fontSize: 11,
-    fontWeight: '800',
-    color: '#9CA3AF',
-    letterSpacing: 1,
-    marginBottom: 10
-  },
-  demoButtonsRow: {
-    flexDirection: 'row',
-    gap: 12
-  },
-  demoButton: {
-    backgroundColor: '#E0E7FF',
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 10
-  },
-  demoButtonAdmin: {
-    backgroundColor: '#FCE7F3'
-  },
-  demoButtonText: {
-    fontSize: 12,
-    fontWeight: '700',
-    color: '#374151'
   }
 });

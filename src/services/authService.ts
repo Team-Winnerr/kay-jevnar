@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInAnonymously,
   signOut,
   onAuthStateChanged,
   User
@@ -8,6 +9,21 @@ import {
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { auth, db } from '../config/firebase';
 import { UserProfile, UserRole } from '../types';
+
+export const signInAsGuest = async (studentName: string = 'Campus Student'): Promise<UserProfile> => {
+  const cred = await signInAnonymously(auth);
+  const user = cred.user;
+  const profile: UserProfile = {
+    id: user.uid,
+    name: studentName.trim() || 'Campus Student',
+    email: `student_${user.uid.slice(0, 5)}@campus.edu`,
+    role: 'student',
+    rollNumber: `PUNE-${Math.floor(1000 + Math.random() * 9000)}`,
+    createdAt: Date.now()
+  };
+  await setDoc(doc(db, 'users', user.uid), profile);
+  return profile;
+};
 
 export const registerUser = async (
   name: string,
@@ -20,18 +36,19 @@ export const registerUser = async (
   const cred = await createUserWithEmailAndPassword(auth, email.trim(), pass);
   const user = cred.user;
 
-  const profile: UserProfile = {
+  const profileData: Record<string, any> = {
     id: user.uid,
     name: name.trim(),
     email: email.trim().toLowerCase(),
     role,
-    rollNumber: rollNumber?.trim(),
-    phone: phone?.trim(),
     createdAt: Date.now()
   };
 
-  await setDoc(doc(db, 'users', user.uid), profile);
-  return profile;
+  if (rollNumber?.trim()) profileData.rollNumber = rollNumber.trim();
+  if (phone?.trim()) profileData.phone = phone.trim();
+
+  await setDoc(doc(db, 'users', user.uid), profileData);
+  return profileData as UserProfile;
 };
 
 export const loginUser = async (email: string, pass: string): Promise<UserProfile> => {

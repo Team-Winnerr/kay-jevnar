@@ -8,11 +8,11 @@ import {
   Switch,
   StyleSheet,
   ActivityIndicator,
-  SafeAreaView,
   ScrollView,
   Modal,
   Alert
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   listenToMenuItems,
   toggleItemAvailability,

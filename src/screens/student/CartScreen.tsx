@@ -7,13 +7,14 @@ import {
   TextInput,
   StyleSheet,
   ActivityIndicator,
-  Alert,
-  SafeAreaView
+  Alert
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { createOrder } from '../../services/orderService';
 import { Order } from '../../types';
+import { getItemPriceINR } from '../../utils/price';
 
 interface CartScreenProps {
   onBack: () => void;
@@ -44,7 +45,12 @@ export const CartScreen: React.FC<CartScreenProps> = ({ onBack, onOrderPlaced })
         subtotal,
         tax,
         total,
-        instructions
+        instructions,
+        {
+          paymentMethod: 'Razorpay (Test)',
+          paymentStatus: 'Paid',
+          razorpayPaymentId: `pay_test_${Math.random().toString(36).substring(2, 12)}`
+        }
       );
       clearCart();
       onOrderPlaced(order);
@@ -95,7 +101,7 @@ export const CartScreen: React.FC<CartScreenProps> = ({ onBack, onOrderPlaced })
                 <View key={menuItem.id} style={styles.itemRow}>
                   <View style={styles.itemInfo}>
                     <Text style={styles.itemName}>{menuItem.name}</Text>
-                    <Text style={styles.itemPrice}>₹{menuItem.price} each</Text>
+                    <Text style={styles.itemPrice}>₹{getItemPriceINR(menuItem)} each</Text>
                   </View>
 
                   <View style={styles.qtyContainer}>
@@ -114,7 +120,7 @@ export const CartScreen: React.FC<CartScreenProps> = ({ onBack, onOrderPlaced })
                     </TouchableOpacity>
                   </View>
 
-                  <Text style={styles.rowTotal}>₹{menuItem.price * quantity}</Text>
+                  <Text style={styles.rowTotal}>₹{getItemPriceINR(menuItem) * quantity}</Text>
                 </View>
               ))}
             </View>
@@ -167,7 +173,9 @@ export const CartScreen: React.FC<CartScreenProps> = ({ onBack, onOrderPlaced })
               {isSubmitting ? (
                 <ActivityIndicator color="#FFFFFF" />
               ) : (
-                <Text style={styles.checkoutBtnText}>Place Order & Pay ➔</Text>
+                <Text style={styles.checkoutBtnText}>
+                  {!firebaseUser ? 'Sign In to Place Order ➔' : 'Place Order & Pay ➔'}
+                </Text>
               )}
             </TouchableOpacity>
           </View>

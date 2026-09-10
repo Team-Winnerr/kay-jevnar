@@ -1,0 +1,14 @@
+# EAS Ignore
+.git
+.venv
+.agents
+node_modules
+dist
+build
+web-build
+bitejoy_site
+stitch_extracted
+scratch_*
+*.mp4
+*.webp
+*.zip

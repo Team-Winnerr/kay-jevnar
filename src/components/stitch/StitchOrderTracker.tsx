@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import { Order } from '../../types';
+import { getItemPriceINR } from '../../utils/price';
 
 interface StitchOrderTrackerProps {
   orderId: string;
@@ -36,10 +37,12 @@ export const StitchOrderTracker: React.FC<StitchOrderTrackerProps> = ({
 
   if (loading) {
     return (
-      <div className="w-full max-w-[480px] mx-auto min-h-screen bg-[#FED97C] flex items-center justify-center border-x-2 border-black">
-        <div className="text-center font-black">
-          <span className="material-symbols-outlined text-4xl animate-spin">refresh</span>
-          <p className="mt-2 text-sm">Connecting to Live Kitchen Dispatch...</p>
+      <div className="w-full max-w-[480px] mx-auto min-h-screen bg-[#FED97C] p-6 flex flex-col items-center justify-center border-x-2 border-black">
+        <div className="bg-white border-4 border-black p-6 rounded-3xl shadow-[6px_6px_0px_#000] flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-4 border-black border-t-accent-crimson rounded-full animate-spin"></div>
+          <span className="font-headline-md text-sm font-black uppercase tracking-wider">
+            Fetching Order Status...
+          </span>
         </div>
       </div>
     );
@@ -86,6 +89,33 @@ export const StitchOrderTracker: React.FC<StitchOrderTrackerProps> = ({
   };
 
   const currentStep = getStepIndex(order.status);
+
+  // Check if order is to be paid on counter
+  const isPayOnCounter =
+    order.paymentMethod === 'Cash at Counter' ||
+    order.paymentMethod?.toLowerCase().includes('counter') ||
+    order.paymentStatus === 'Pending';
+
+  // Calculate items subtotal accurately using getItemPriceINR
+  const calculatedItemsSubtotal = (order.items || []).reduce((sum, item) => {
+    return sum + getItemPriceINR(item.menuItem) * item.quantity;
+  }, 0);
+
+  // If order.subtotal is already in INR scale (>= 30), use it; otherwise fallback to item sum
+  const subtotalINR =
+    typeof order.subtotal === 'number' && order.subtotal >= 30
+      ? Math.round(order.subtotal)
+      : calculatedItemsSubtotal;
+
+  const taxINR =
+    typeof order.tax === 'number' && order.tax >= 1
+      ? Math.round(order.tax)
+      : Math.round(subtotalINR * 0.05);
+
+  const totalINR =
+    typeof order.total === 'number' && order.total >= 30
+      ? Math.round(order.total)
+      : subtotalINR + taxINR;
 
   return (
     <div className="w-full flex flex-col items-center">
@@ -138,6 +168,26 @@ export const StitchOrderTracker: React.FC<StitchOrderTrackerProps> = ({
               Kitchen staff will verify this PIN before handing over your hot meal tray.
             </p>
           </section>
+
+          {/* Pay at Counter Alert Banner */}
+          {isPayOnCounter && (
+            <section className="bg-[#FEF9C3] border-3 border-black rounded-2xl p-3.5 shadow-[4px_4px_0px_#000] flex items-start gap-3">
+              <span className="text-2xl leading-none">💵</span>
+              <div className="flex-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-black uppercase text-[#854D0E] tracking-wide">
+                    Payment on Counter
+                  </span>
+                  <span className="text-[10px] font-black bg-[#EAB308] text-black px-2 py-0.5 rounded-full border border-black">
+                    UNPAID
+                  </span>
+                </div>
+                <p className="text-xs font-bold text-black/85 mt-1 leading-snug">
+                  Please pay <span className="font-black text-accent-crimson text-sm">₹{totalINR}</span> via Cash or UPI at the canteen counter when collecting your meal tray.
+                </p>
+              </div>
+            </section>
+          )}
 
           {/* Live Cooking Status Progress */}
           <section className="bg-white rounded-3xl border-[3.5px] border-black p-4 shadow-[4px_4px_0px_#000]">
@@ -216,12 +266,19 @@ export const StitchOrderTracker: React.FC<StitchOrderTrackerProps> = ({
 
           {/* Order Summary & Items List */}
           <section className="bg-white rounded-3xl border-[3.5px] border-black p-4 shadow-[4px_4px_0px_#000]">
-            <h3 className="text-xs font-black uppercase tracking-wider mb-2 border-b-2 border-gray-100 pb-1.5">
-              Meal Tray Items
-            </h3>
+            <div className="flex items-center justify-between mb-2 border-b-2 border-gray-100 pb-1.5">
+              <h3 className="text-xs font-black uppercase tracking-wider">
+                Meal Tray Items
+              </h3>
+              <span className="text-[10px] font-black px-2 py-0.5 rounded-full border border-black bg-[#FED97C]">
+                {order.paymentMethod || (isPayOnCounter ? 'Cash at Counter' : 'Online Paid')}
+              </span>
+            </div>
+
             <div className="space-y-2 mb-3">
               {order.items.map((item, idx) => {
-                const priceINR = item.menuItem.priceINR || Math.round(item.menuItem.price * 83);
+                const unitPrice = getItemPriceINR(item.menuItem);
+                const lineTotal = unitPrice * item.quantity;
                 return (
                   <div key={idx} className="flex justify-between items-center text-xs">
                     <span className="font-extrabold text-on-surface">
@@ -231,7 +288,7 @@ export const StitchOrderTracker: React.FC<StitchOrderTrackerProps> = ({
                       {item.menuItem.name}
                     </span>
                     <span className="font-black text-tertiary">
-                      ₹{priceINR * item.quantity}
+                      ₹{lineTotal}
                     </span>
                   </div>
                 );
@@ -241,20 +298,20 @@ export const StitchOrderTracker: React.FC<StitchOrderTrackerProps> = ({
             <div className="border-t-2 border-dashed border-gray-300 pt-2 space-y-1 text-xs">
               <div className="flex justify-between font-semibold text-gray-600">
                 <span>Subtotal</span>
-                <span>
-                  ₹{Math.round((order.subtotal || order.total * 0.95) * 83)}
+                <span className="font-black text-black">
+                  ₹{subtotalINR}
                 </span>
               </div>
               <div className="flex justify-between font-semibold text-gray-600">
                 <span>Campus Canteen Tax (5%)</span>
-                <span>
-                  ₹{Math.round((order.tax || order.total * 0.05) * 83)}
+                <span className="font-black text-black">
+                  ₹{taxINR}
                 </span>
               </div>
-              <div className="flex justify-between font-black text-sm text-black border-t-2 border-black pt-1">
-                <span>Total Paid</span>
-                <span className="text-accent-crimson">
-                  ₹{Math.round(order.total * 83)}
+              <div className="flex justify-between font-black text-sm text-black border-t-2 border-black pt-1.5 mt-1">
+                <span>{isPayOnCounter ? '💵 To Pay at Counter' : '💳 Total Paid'}</span>
+                <span className="text-accent-crimson font-black text-base">
+                  ₹{totalINR}
                 </span>
               </div>
             </div>

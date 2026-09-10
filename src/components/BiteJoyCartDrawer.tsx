@@ -352,7 +352,7 @@ export const BiteJoyCartDrawer: React.FC<BiteJoyCartDrawerProps> = ({
                     </>
                   ) : (
                     <>
-                      <span>Place Order & Pay at Counter</span>
+                      <span>Place Order & Pay at Counter (₹{total})</span>
                       <span className="text-base">🔐</span>
                     </>
                   )}

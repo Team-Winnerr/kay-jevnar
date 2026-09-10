@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Tue Sep 08 2026 18:43:25 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="client-first.finsweet.com" data-wf-page="65735ae231ce6f85dc671411" data-wf-site="65735ae231ce6f85dc671354" lang="en"><head><meta charset="utf-8"/><link crossorigin="anonymous" href="https://cdn.prod.website-files.com" rel="preconnect"/><title>Docs - Client-First</title><meta content="Client-First is a set of guidelines and strategies to help you build Webflow websites in a clear and scalable way that any human can understand." name="description"/><meta content="Docs - Client-First" property="og:title"/><meta content="Client-First is a set of guidelines and strategies to help you build Webflow websites in a clear and scalable way that any human can understand." property="og:description"/><meta content="https://cdn.prod.website-files.com/6479edfe545104a5be8ea0b1/6563df320eedb971ae259433_og-image-client-first-home.webp" property="og:image"/><meta content="Docs - Client-First" name="twitter:title"/><meta content="Client-First is a set of guidelines and strategies to help you build Webflow websites in a clear and scalable way that any human can understand." name="twitter:description"/><meta content="https://cdn.prod.website-files.com/6479edfe545104a5be8ea0b1/6563df320eedb971ae259433_og-image-client-first-home.webp" name="twitter:image"/><meta content="website" property="og:type"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="Webflow" name="generator"/><link crossorigin="anonymous" href="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/css/client-first.webflow.shared.6e031511e.min.css" integrity="sha384-bgMVEeYj6AIm4Dg8pdjW7uVXsnwc9pxjiiYN8zaedfeU1ZV2QFLMZbHT0kv8NiRo" rel="stylesheet" type="text/css"/><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a3_client-first_fav-icon.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65e48a8b5ab25ca4017e3106_Client-First-logo-icon.png" rel="apple-touch-icon"/><link href="https://finsweet.com/client-first/docs" rel="canonical"/><!-- Consent Pro script -->
+<script finsweet="consentpro" src="https://api.consentpro.com/v2/cdn/runtime/config/65735ae231ce6f85dc671354.js"></script>
+<script finsweet="consentpro" siteid="65735ae231ce6f85dc671354" src="https://api.consentpro.com/v2/cdn/runtime.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N2BF94JL');</script>
+<!-- End Google Tag Manager -->
+<!-- Finsweet Attributes for Cross-site announcements banner-->
+<script async="" fs-inject="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js" type="module">
+</script>
+<!-- This script is managed by Consent Pro -->
+<script fs-consent-categories="essential" type="fs-consent">
+      var onloadCallback = function() {
+        grecaptcha.render('recaptcha', {
+          'sitekey' : '6LdqZjgqAAAAAEv7NQQ_cCitx_Y7ak61Jgc_tWfg'
+        });
+      }; 
+</script>
+<meta content="https://cdn.prod.website-files.com/60f51550d69dbad0b4e158eb/62fbefefac4d996f6ede6a9c_og-image.png" property="og:image"/>
+<meta content="https://cdn.prod.website-files.com/60f51550d69dbad0b4e158eb/62fbefefac4d996f6ede6a9c_og-image.png" property="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@thatsfinsweet" name="twitter:creator"/>
+<!-- Finsweet Auth -->
+<!-- This script is managed by Consent Pro -->
+<script fs-consent-categories="essential" fs-consent-scripttype="text/javascript" type="fs-consent">
+  const isStaging = window.location.href.includes('webflow.io');
+  window.baseUrl = isStaging
+    ? 'https://client-first.webflow.io'
+    : 'https://www.finsweet.com/client-first';
+    
+  window.fsAuth = {
+    client_id: 'PYmNOHXRp3rk1W9JDZDrynoJjQjlZiOe',
+    redirect_uri: `${window.baseUrl}/settings`,
+    returnTo: window.baseUrl,
+  };
+</script>
+<!-- [Attributes by Finsweet] Smart Form Submit -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-formsubmit@1/formsubmit.js"></script>
+<!-- [Attributes by Finsweet] Table of Contents -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-toc@1/toc.js"></script>
+<!-- [Attributes by Finsweet] Disable scrolling -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js"></script>
+<!-- [Attributes by Finsweet] Powerful Rich Text -->
+<script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-richtext@1/richtext.js"></script>
+<!-- [Attributes by Finsweet] readtime 
+<script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-readtime@1"></script-->
+<!-- Finsweet Attributes -->
+<script async="" fs-autovideo="" fs-mirrorclick="" fs-scrolldisable="" fs-videohls="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js" type="module"></script>
+<!-- Global styles -->
+<style>
+  [fs-auth-cloak] {
+    display: none !important;
+  }
+</style><style>
+.docs_pages-bottom {
+display: none;
+}
+</style>
+<script async="" finsweet="components" siteid="65735ae231ce6f85dc671354" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354%2F6544eda5f000985a163a8687%2F67e6ab80fd0ae814c456cd64%2Ffinsweetcomponentsconfig-1.0.3.js" type="module"></script></head><body><div class="page-wrapper"><div class="global-styles w-embed"><style>
+
+.is-balance {
+text-wrap: balance;
+}
+
+/* Fluid Responsive 
+  html { font-size: 1rem; }
+  @media screen and (max-width:1920px) { html { font-size: calc(0.49999999999999994rem + 0.41666666666666674vw); } }
+  @media screen and (max-width:1440px) { html { font-size: calc(0.5003902185223725rem + 0.41623309053069724vw); } }
+  @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } }*/
+  
+  html { font-size: 1rem; }
+  @media screen and (max-width:1920px) { html { font-size: 1rem; } }
+  @media screen and (max-width:1440px) { html { font-size: calc(0.00003125000000037126rem + 1.1109374999999995vw); } }
+  @media screen and (max-width:991px) { html { font-size: calc(0.7582846003898636rem + 0.38986354775828463vw); } }
+  @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } }
+
+  
+  
+/* Please keep this css code to improve the font quality */
+  * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Style Docs Tooltip */
+.tooltip {
+color: blue;
+cursor: pointer;
+}
+
+.jBox-Mouse .jBox-container, .jBox-Tooltip .jBox-container {
+box-shadow: 0 0 1px 1px rgb(0 0 0 / 100%) !important;
+border-radius: 0px !important;
+}
+
+.jBox-pointer-bottom:after {
+box-shadow: 0 0 1px 1px rgb(0 0 0 / 100%) !important;
+}
+
+
+/* Style docs pages navigation scrollbar */
+
+/*width*/
+/*body::-webkit-scrollbar {
+width:0.5rem;
+}
+/*track*/
+/*body::-webkit-scrollbar-track {
+background:rgb(245, 245, 245);
+border-radius:0px;
+}
+/*thumb*/
+/*body::-webkit-scrollbar-thumb {
+background:rgb(45, 98, 255);
+border-color:rgb(51, 51, 51);
+}
+
+/* Style docs table of content scrollbar */
+
+/*width*/
+.docs_nav_menu::-webkit-scrollbar {
+width:0.5rem !important;
+}
+/*track*/
+.docs_nav_menu::-webkit-scrollbar-track {
+background:rgb(245, 245, 245);
+border-radius:0px;
+}
+/*thumb*/
+.docs_nav_menu::-webkit-scrollbar-thumb {
+background:#d6d6d6;
+border-radius:0px;
+}
+/* Style docs table of content scrollbar */
+/*width*/
+.docs_page_menu::-webkit-scrollbar {
+width:0.5rem !important;
+}
+/*track*/
+.docs_page_menu::-webkit-scrollbar-track {
+background:rgb(245, 245, 245);
+border-radius:0px;
+}
+/*thumb*/
+.docs_page_menu::-webkit-scrollbar-thumb {
+background:#d6d6d6;
+border-radius:0px;
+}
+  /* Style rich text images */
+  .w-richtext figure.w-richtext-align-fullwidth {
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: #e6e6e6 !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+  max-width: 100% !important;
+  }
+  .w-richtext figure.w-richtext-align-fullwidth > div {
+  width: 100% !important;
+  }
+  
+  /* Style rich text videos 
+  .docs_rich-text video {
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: #e6e6e6 !important;
+  } */
+
+/* Change the classes style inside the paragraphs and lists */
+.docs_rich-text > p > em, .docs_rich-text > ul > li > em, .docs_rich-text ol > li > em, 
+.docs_rich-text > p > sup, .docs_rich-text > ul > li > sup, .docs_rich-text ol > li > sup {
+	font-size: 1rem;
+}
+
+/* Edit default superscript style on Rich Text. used for class name */
+sup {
+	top: 0;
+  line-height: inherit;
+  font-size: 100%;
+}
+
+sub {
+font-style: italic;
+bottom: 0rem;
+font-size: 100%;
+}
+
+.w-richtext .w-embed {
+	margin-bottom: 1rem;
+}
+
+/* Snippet gets rid of top margin on first element in any rich text */
+.w-richtext > :not(div):first-child,
+.w-richtext > div:first-child > :first-child {
+margin-top: 0 !important;
+  }
+
+/* Snippet gets rid of bottom margin on last element in any rich text */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Snippet prevents all click and hover interaction with an element */
+.clickable-off {
+  pointer-events: none;
+}
+
+/* Snippet enables all click and hover interaction with an element */
+.clickable-on{
+  pointer-events: auto;
+}
+
+/*Hide focus outline for main content element*/
+    main:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+/* Class Label Dot */
+.fs-styleguide-class-label::before {
+  content: '.';
+}
+.fs-styleguide-class-label.fs-styleguide-no-dot::before,
+.fs-styleguide-class-label.fs-copied::before {
+  content: '';
+}
+
+/*Apply "..." After 3 lines of Text */
+.text-style-3lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+/*Apply "..." After 2 lines of Text */
+.text-style-2lines {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Make sure containers never lose their center alignment*/
+.container-medium, .container-small, .container-large {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+
+/*Reset selects, buttons, and links styles*/
+.w-select, a {
+color: inherit;
+text-decoration: inherit;
+font-size: inherit;
+}
+
+/* Snippet allows us to maintain 16:9 aspect ration of a div.*/
+.fs-resources-videos_rectangle {
+  overflow:hidden;
+	padding-bottom:56.25%;
+	position:relative;
+	height:0;
+}
+
+/* Snippet allows us to maintain 16:9 aspect ration of a div.*/
+.fs-resources-clone_rectangle {
+  overflow:hidden;
+	padding-bottom:80.54%;
+	position:relative;
+	height:0;
+}
+
+/* Prevents social icons move on hover - Safari specific bug */
+.fs-resources-clone_embed { /* If name changes, this class needs to change too */
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1, 1);
+}
+
+
+input[type=text],input[type=email] {   
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;    
+}
+
+.live-header_button-wrapper .fs-resources-button-outline-black {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Outline button hover */
+.fs-resources-button-outline-white:hover .fs-resources-button-outline-white-icon {
+  transform: translate(2px, -2px) rotate(-45deg);
+}
+
+/* Change text to vertical position */
+@media screen and (min-width:991px) {
+.link_vertical_text {
+writing-mode: vertical-lr;
+	}
+}
+  .add-product-logo::after {
+    content: '';
+    display: inline-block;
+    height: 0.9em; /* Adjusted from 0.9em to 18px for consistency */
+    width: 0.9em; /* Adjusted from 0.9em to 18px for consistency */
+    margin-left: 0.2em;
+    background-image: url(https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65e48a8b5ab25ca4017e3106_Client-First-logo-icon.png);
+    background-size: cover; /* Changed from 100% to cover for better image scaling */
+    background-position: center;
+    margin-bottom: -0.1em; /* This can be adjusted based on your layout */
+  }
+</style>
+</div><div class="nav_fixed"><div class="nav_component w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner"><header class="padding-global"><div class="nav_container"><div class="nav_logo_wrapper"><a class="nav_logo-link w-inline-block" href="https://finsweet.com/client-first/"><img alt="" class="nav_logo" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/674656dc0bd117c63fcff359_client-first-logo-updated.svg"/></a><div class="nav_logo_divider"></div><a class="nav_logo-link is-finsweet w-inline-block" href="https://finsweet.com"><div class="nav_logo is-finsweet w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 102 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.096 17.14C3.934 17.14 3.094 16.566 2.702 15.824V17H1.008V6.29H2.702V10.854C3.108 10.154 4.018 9.524 5.096 9.524C6.93 9.524 8.344 10.882 8.344 13.248V13.36C8.344 15.712 6.986 17.14 5.096 17.14ZM4.676 15.796C5.922 15.796 6.608 14.956 6.608 13.388V13.276C6.608 11.652 5.768 10.854 4.662 10.854C3.486 10.854 2.646 11.652 2.646 13.276V13.388C2.646 15.026 3.444 15.796 4.676 15.796ZM10.488 19.506L11.818 16.258L8.91997 9.678H10.754L12.7 14.396L14.492 9.678H16.144L12.154 19.506H10.488Z" fill="currentColor"></path>
+<g clip-path="url(#clip0_3132_6887)">
+<path d="M101.861 16.2198V18.1748H100.221C98.4706 18.1198 97.5356 17.1748 97.5356 15.3998V10.9348H96.3906V9.21981H97.5356V7.2998H99.9556V9.19981H101.806V10.9098H99.9556V15.1598C99.9556 15.7348 100.071 16.1948 100.956 16.1948L101.861 16.2198Z" fill="currentColor"></path>
+<path d="M86.7468 13.7151V13.5851C86.7204 13.0101 86.8081 12.4355 87.0044 11.8943C87.2008 11.3532 87.5021 10.8561 87.8908 10.4315C88.2794 10.007 88.7481 9.6633 89.2701 9.42027C89.7921 9.1772 90.3568 9.03954 90.9318 9.01514C91.0468 9.01514 91.1668 9.01514 91.2818 9.01514C93.5668 9.01514 95.5718 10.3451 95.5718 13.5151V14.1901H89.2218C89.2868 15.6501 90.0768 16.4751 91.4068 16.4751C92.5518 16.4751 93.0868 15.9751 93.2418 15.2451H95.5268C95.2468 17.1501 93.7268 18.2101 91.3218 18.2101C88.6818 18.1901 86.7468 16.5201 86.7468 13.7151ZM93.1918 12.6601C93.1068 11.3301 92.4368 10.6901 91.2718 10.6901C90.1068 10.6901 89.4368 11.4101 89.2718 12.6601H93.1918Z" fill="currentColor"></path>
+<path d="M76.864 13.7151V13.5851C76.8376 13.0109 76.925 12.4371 77.1206 11.8965C77.3163 11.356 77.6166 10.8593 78.0043 10.4349C78.392 10.0105 78.8596 9.66667 79.3803 9.42304C79.901 9.17944 80.4646 9.04084 81.039 9.01514C81.154 9.01514 81.274 9.01514 81.389 9.01514C83.674 9.01514 85.684 10.3451 85.684 13.5151V14.1901H79.339C79.404 15.6501 80.194 16.4751 81.524 16.4751C82.669 16.4751 83.204 15.9751 83.359 15.2451H85.644C85.359 17.1501 83.839 18.2101 81.434 18.2101C78.799 18.1901 76.864 16.5201 76.864 13.7151ZM83.309 12.6601C83.224 11.3301 82.554 10.6901 81.389 10.6901C80.224 10.6901 79.574 11.4301 79.389 12.6551L83.309 12.6601Z" fill="currentColor"></path>
+<path d="M63 9.2002H65.56L67.125 15.1302L68.84 9.2002H70.84L72.39 15.1302L74.04 9.2002H76.385L73.605 18.0102H71.205L69.705 12.4802L68.1 18.0102H65.67L63 9.2002Z" fill="currentColor"></path>
+<path d="M54.8633 15.2401H57.1483C57.2533 16.0351 57.6483 16.4901 58.6983 16.4901C59.6383 16.4901 60.0733 16.1351 60.0733 15.5301C60.0733 14.9251 59.5733 14.6701 58.2933 14.4901C55.9483 14.1351 55.0433 13.4601 55.0433 11.7401C55.0433 9.90512 56.7233 8.99512 58.5433 8.99512C60.4983 8.99512 61.9733 9.70512 62.1833 11.7301H59.9283C59.9139 11.5736 59.8686 11.4214 59.7949 11.2825C59.7216 11.1435 59.6213 11.0205 59.4999 10.9206C59.3786 10.8206 59.2386 10.7457 59.0883 10.7001C58.9376 10.6546 58.7796 10.6393 58.6233 10.6551H58.5483C57.7583 10.6551 57.2983 11.0251 57.2983 11.5651C57.2983 12.1051 57.7233 12.3401 59.0133 12.5251C61.2033 12.8551 62.4283 13.4101 62.4283 15.2951C62.4283 17.1801 61.0433 18.1901 58.7233 18.1901C56.4033 18.1901 54.9283 17.1451 54.8633 15.2401Z" fill="currentColor"></path>
+<path d="M45.1562 9.20014H47.5763V10.5951C47.849 10.0831 48.2631 9.66014 48.7692 9.37654C49.2753 9.09291 49.8521 8.96054 50.4313 8.99514C52.1463 8.99514 53.3913 10.0401 53.3913 12.4251V18.0301H51.0013V12.7751C51.0013 11.5801 50.5363 11.0101 49.4563 11.0101C49.228 10.9903 48.998 11.0157 48.7796 11.0849C48.5612 11.1541 48.3586 11.2658 48.1835 11.4135C48.0083 11.5613 47.8641 11.7422 47.759 11.9458C47.654 12.1494 47.5902 12.3718 47.5713 12.6001C47.5588 12.7064 47.5588 12.8138 47.5713 12.9201V18.0101H45.1562V9.20014Z" fill="currentColor"></path>
+<path d="M40.4852 6.98502C40.4764 6.74374 40.5394 6.50528 40.6662 6.29983C40.7931 6.09438 40.978 5.93119 41.1976 5.83091C41.4173 5.73063 41.6617 5.69777 41.9 5.7365C42.1384 5.77523 42.3598 5.8838 42.5364 6.04846C42.713 6.21313 42.8367 6.42649 42.892 6.66152C42.9472 6.89656 42.9315 7.1427 42.8468 7.36879C42.7621 7.59489 42.6122 7.79075 42.4161 7.93159C42.22 8.07245 41.9865 8.15195 41.7452 8.16002H41.7002C41.5504 8.16949 41.4002 8.14932 41.2583 8.10062C41.1163 8.05195 40.9854 7.97569 40.873 7.87629C40.7605 7.77689 40.6689 7.65625 40.6032 7.52132C40.5375 7.38639 40.4991 7.23982 40.4902 7.09002C40.486 7.05518 40.4843 7.0201 40.4852 6.98502ZM40.4852 9.20002H42.9302V18.01H40.4952L40.4852 9.20002Z" fill="currentColor"></path>
+<path d="M31.2695 5.97021H38.9995V8.10521H33.9995V11.2902H37.9595V13.3452H33.9945V18.0102H31.2695V5.97021Z" fill="currentColor"></path>
+<path d="M26.605 9.91C26.605 10.665 26.605 11.585 25.565 11.96C26.63 12.325 26.605 13.1 26.605 13.91V16.91C26.605 17.48 26.835 17.825 27.245 17.91C27.3351 17.9404 27.43 17.954 27.525 17.95H28.525V19.95H26.875C25.115 19.95 24.145 18.95 24.145 17.095V13.545C24.1325 13.3627 24.0522 13.1918 23.9198 13.0659C23.7874 12.94 23.6127 12.8683 23.43 12.865H23V11.11H23.43C23.6163 11.1075 23.7945 11.0335 23.9276 10.9031C24.0607 10.7728 24.1386 10.5962 24.145 10.41V6.81C24.145 4.985 25.095 4 26.875 4H28.54V5.97H27.54C27.4449 5.97028 27.3504 5.98546 27.26 6.015C26.85 6.12 26.62 6.46 26.62 7.015L26.605 9.91Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_3132_6887">
+<rect fill="currentColor" height="16" transform="translate(23 4)" width="79"></rect>
+</clippath>
+</defs>
+</svg></div></a></div><nav class="nav_menu_wrapper w-nav-menu" role="navigation"><div class="nav_menu_left"><div class="nav_dropdown_component w-dropdown" data-delay="0" data-hover="false"><div class="nav_dropdown_toggle w-dropdown-toggle"><div>Docs</div><div class="nav_dropdown_icon w-embed"><svg fill="none" viewbox="0 0 24 14" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.9393 13.0607C11.5251 13.6464 12.4749 13.6464 13.0607 13.0607L22.6066 3.5147C23.1924 2.92891 23.1924 1.97916 22.6066 1.39338C22.0208 0.807592 21.071 0.807594 20.4853 1.39338L12 9.87868L3.5147 1.39341C2.92891 0.807629 1.97916 0.807631 1.39338 1.39342C0.807592 1.97921 0.807594 2.92895 1.39338 3.51474L10.9393 13.0607ZM10.5 9.5L10.5 12L13.5 12L13.5 9.5L10.5 9.5Z" fill="currentColor"></path>
+</svg></div></div><nav class="nav_dropdown_list w-dropdown-list"><div class="nav_dropdown_content"><div class="nav_dropdown_container"><div class="nav_list is-5-columns"><a class="card_component w-inline-block" href="https://finsweet.com/client-first/docs/quick-guide" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5310f-9ad5310c"><div class="card_content is-dropdown"><div class="card_header"><div class="card_header_icon-wrapper"><div class="heading-style-h6">Quick Guide</div><div class="label is-small is-blue-light"><div class="label_text">START HERE</div></div></div><div class="arrow is-medium text-color-blue w-embed"><svg fill="none" viewbox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.5422 23.6288L21.5387 23.6052L21.5387 11.9615L9.16431 24.3359L7.7501 22.9217L20.1245 10.5473L8.48078 10.5473L8.45721 8.54383H23.5422V23.6288Z" fill="currentColor"></path>
+</svg></div></div><div class="card_content_text-wrapper"><p>The most important topics of Client-First.</p></div></div></a><a class="card_component w-inline-block" href="https://finsweet.com/client-first/docs/quick-guide" id="w-node-ec084598-0749-8e37-a4e9-dd6e88d337c4-9ad5310c"><div class="card_content is-dropdown"><div class="card_header"><div class="card_header_icon-wrapper"><div class="heading-style-h6">Learning Path</div><div class="label is-small is-blue-light"><div class="label_text">SCHEDULE</div></div></div><div class="arrow is-medium text-color-blue w-embed"><svg fill="none" viewbox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.5422 23.6288L21.5387 23.6052L21.5387 11.9615L9.16431 24.3359L7.7501 22.9217L20.1245 10.5473L8.48078 10.5473L8.45721 8.54383H23.5422V23.6288Z" fill="currentColor"></path>
+</svg></div></div><div class="card_content_text-wrapper"><p>A 7-day schedule to learn Client-First</p></div></div></a><div class="nav_dropdown_column"><div class="nav_dropdown_heading">Getting Started</div><div class="footer_links_list"><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53122-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/intro">Intro</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53125-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/big-docs">Big docs</a></div></div></div><div class="nav_dropdown_column"><div class="nav_dropdown_heading">Concepts</div><div class="nav_dropdown_link-list"><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5312c-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/classes-strategy-1">Classes strategy 1</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5312f-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/core-structure-strategy">Core Structure strategy</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53132-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/sizes-and-rem">Sizes and rem</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53135-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/typography-strategy">Typography strategy</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53138-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/spacing-strategy">Spacing strategy</a><div class="label is-small is-pink-light" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53139-9ad5310c"><div class="label_text">UPDATED</div></div></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5313e-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/utility-class-systems">Utility class systems</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53141-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/classes-strategy-2">Classes strategy 2</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53144-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/folders">Folders</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53147-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/folders-strategy">Folders strategy</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5314a-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/interactions-naming">Interactions naming</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_9a057196-e8a6-ae59-aad6-a008a4ad8fab-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/variables">Variables</a></div></div></div><div class="nav_dropdown_column" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5314d-9ad5310c"><div class="nav_dropdown_heading">Usability</div><div class="footer_links_list"><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53151-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/fluid-responsive">Fluid responsive</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53154-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/semantic-html-tags">Semantic HTML tags</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53157-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/accessibility">Accessibility</a></div></div></div><div class="nav_dropdown_column"><div class="nav_dropdown_heading">Supporting Content</div><div class="footer_links_list"><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5315e-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/learning-path">Global Styles embed</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53161-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/css-specificity">CSS specificity</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53167-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/sales-strategy">Sales strategy</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5316a-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/productivity-client-first">Client-First productivity</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad5316d-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/productivity-webflow">Webflow productivity</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53170-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/beginners">Beginners in Webflow</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53173-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/webflow-resources">Webflow resources</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53179-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/changelog">Changelog</a></div></div></div><div class="nav_dropdown_column"><div class="nav_dropdown_heading">Get Involved</div><div class="footer_links_list"><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53180-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/board-of-directors">Board of Directors</a></div><div class="nav_dropdown_link-wrapper" id="w-node-_5d0c849f-37fb-e436-7102-82fc9ad53183-9ad5310c"><a class="link" href="https://finsweet.com/client-first/docs/become-a-translator">Become a Translator</a></div></div></div></div></div></div></nav></div><a class="nav_menu_link" href="https://finsweet.com/client-first/resources">Resources</a><div class="nav_dropdown_component w-dropdown" data-delay="0" data-hover="false"><div class="nav_dropdown_toggle w-dropdown-toggle"><div>Languages</div><div class="nav_dropdown_icon w-embed"><svg fill="none" viewbox="0 0 24 14" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.9393 13.0607C11.5251 13.6464 12.4749 13.6464 13.0607 13.0607L22.6066 3.5147C23.1924 2.92891 23.1924 1.97916 22.6066 1.39338C22.0208 0.807592 21.071 0.807594 20.4853 1.39338L12 9.87868L3.5147 1.39341C2.92891 0.807629 1.97916 0.807631 1.39338 1.39342C0.807592 1.97921 0.807594 2.92895 1.39338 3.51474L10.9393 13.0607ZM10.5 9.5L10.5 12L13.5 12L13.5 9.5L10.5 9.5Z" fill="currentColor"></path>
+</svg></div></div><nav class="nav_dropdown_list w-dropdown-list"><div class="nav_dropdown_content"><div class="nav_dropdown_container"><div class="nav_docs_list-component"><div class="nav_docs_section"><h3>Learn Client-First in other languages</h3><div class="docs_inner_grid is-languages-doc"><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/fr/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67174f_flag-france.svg"/><div>French</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/tl/panimula"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671756_flag-philippines.svg"/><div>Taglog</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/pl/wprowadzenie"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67179e_poland.svg"/><div>Polish</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/vi/gioi-thieu"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671762_flag-vietnam.svg"/><div>Vietnamese</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/de/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671761_flag-germany.svg"/><div>German</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/ar/almoqadema"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717aa_arabic.svg"/><div>Arabic</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/tr/giris"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671755_flag-turkey.svg"/><div>Turkish</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/ja/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a7_japan.svg"/><div>Japanese</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/da/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671751_flag-denamark.svg"/><div>Danish</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/bn/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a6_bangladesh.svg"/><div>Bengali</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/mk/vodach-od-v1-do-v2" id="w-node-e05936a5-8f7c-0d2a-a51d-f4e1bdf569c2-901c43e2"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671768_flag-macedonia.svg"/><div>Macedonian</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/hr/uvod" id="w-node-efbc7b13-fc57-b357-32b6-fcbf049ec342-901c43e2"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671753_flag-croatia.svg"/><div>Croatian</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/pt/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671760_flag-brazil.svg"/><div>Portuguese</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/bg/vavedenie"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a8_bulgarian.svg"/><div>Bulgarian</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671766_flag-spain.svg"/><div>Spanish</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671764_flag-hungary.svg"/><div>Hungarian</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671750_flag-greece.svg"/><div>Greek</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671767_flag-netherlands.svg"/><div>Dutch</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#" id="w-node-_31ac2e90-366c-b708-4f74-0acac3d51657-901c43e2"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717ab_russian.svg"/><div>Russian</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#" id="w-node-_2befd4a7-3f9d-3406-d3f7-a8d1a07bb67c-901c43e2"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a9_ukrain-flag.svg"/><div>Ukrainian</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/docs/become-a-translator" id="w-node-_639b4b60-1160-bde1-f356-bbb3cd6b1947-901c43e2"><div class="card_content is-language"><div class="card_header"><div class="card_country_wrapper"><div class="icon-embed-small w-embed"><svg fill="none" height="100%" viewbox="0 0 99 99" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_373_1342)">
+<path d="M98.6243 0.835449H0.624451V98.8354H98.6243V0.835449Z" fill="#2D62FF"></path>
+<rect fill="white" height="9.1875" width="57.1665" x="21.0394" y="62.0835"></rect>
+<rect fill="white" height="9.1875" width="24.5" x="21.0394" y="36.5635"></rect>
+</g>
+<defs>
+<clippath id="clip0_373_1342">
+<rect fill="white" height="98" rx="8.16667" width="97.9998" x="0.625" y="0.833496"></rect>
+</clippath>
+</defs>
+</svg></div><div class="heading-style-h6">Become a Client-First Translator</div></div><div class="arrow is-medium text-color-blue w-embed"><svg fill="none" viewbox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.5422 23.6288L21.5387 23.6052L21.5387 11.9615L9.16431 24.3359L7.7501 22.9217L20.1245 10.5473L8.48078 10.5473L8.45721 8.54383H23.5422V23.6288Z" fill="currentColor"></path>
+</svg></div></div></div></a></div></div></div></div></div></nav></div></div><div class="nav_menu_right"><a class="button is-login hide w-inline-block" fs-auth-cloak="true" fs-auth-element="login" href="#"><div>Log in with</div><div class="button_logo w-embed"><svg viewbox="0 0 90 18" xmlns="http://www.w3.org/2000/svg">
+<path d="M89.712 13.7475V15.9469H87.867C85.8983 15.885 84.8464 14.8219 84.8464 12.825V7.8019H83.5583V5.87253H84.8464V3.71252H87.5689V5.85003H89.6501V7.77378H87.5689V12.555C87.5689 13.2019 87.6983 13.7194 88.6939 13.7194L89.712 13.7475Z" fill="currentColor"></path>
+<path d="M72.7076 10.9293V10.7831C72.678 10.1361 72.7766 9.48972 72.9975 8.88095C73.2184 8.27213 73.5574 7.7129 73.9946 7.23526C74.4319 6.75766 74.9591 6.37103 75.5464 6.09762C76.1336 5.82417 76.7689 5.6693 77.4157 5.64185C77.5451 5.64185 77.6801 5.64185 77.8095 5.64185C80.3801 5.64185 82.6358 7.1381 82.6358 10.7043V11.4637H75.492C75.5651 13.1062 76.4539 14.0343 77.9501 14.0343C79.2382 14.0343 79.8401 13.4718 80.0145 12.6506H82.5851C82.2701 14.7937 80.5601 15.9862 77.8545 15.9862C74.8845 15.9637 72.7076 14.085 72.7076 10.9293ZM79.9583 9.74247C79.8626 8.24622 79.1089 7.52622 77.7982 7.52622C76.4876 7.52622 75.7339 8.33622 75.5482 9.74247H79.9583Z" fill="currentColor"></path>
+<path d="M61.5926 10.9293V10.7831C61.563 10.137 61.6613 9.49152 61.8814 8.88342C62.1015 8.27532 62.4394 7.71657 62.8755 7.23912C63.3116 6.76163 63.8378 6.37482 64.4235 6.10073C65.0093 5.82668 65.6434 5.67076 66.2895 5.64185C66.4189 5.64185 66.5539 5.64185 66.6833 5.64185C69.2539 5.64185 71.5151 7.1381 71.5151 10.7043V11.4637H64.377C64.4501 13.1062 65.3389 14.0343 66.8351 14.0343C68.1233 14.0343 68.7251 13.4718 68.8995 12.6506H71.4701C71.1495 14.7937 69.4395 15.9862 66.7339 15.9862C63.7695 15.9637 61.5926 14.085 61.5926 10.9293ZM68.8433 9.74247C68.7476 8.24622 67.9939 7.52622 66.6833 7.52622C65.3726 7.52622 64.6414 8.35872 64.4333 9.73685L68.8433 9.74247Z" fill="currentColor"></path>
+<path d="M45.9945 5.84998H48.8745L50.6351 12.5212L52.5645 5.84998H54.8145L56.5583 12.5212L58.4145 5.84998H61.0526L57.9251 15.7612H55.2251L53.5376 9.53998L51.732 15.7612H48.9983L45.9945 5.84998Z" fill="currentColor"></path>
+<path d="M36.8426 12.645H39.4133C39.5314 13.5394 39.9758 14.0513 41.157 14.0513C42.2145 14.0513 42.7039 13.6519 42.7039 12.9713C42.7039 12.2906 42.1414 12.0038 40.7014 11.8013C38.0633 11.4019 37.0451 10.6425 37.0451 8.70751C37.0451 6.64313 38.9351 5.61938 40.9826 5.61938C43.182 5.61938 44.8414 6.41814 45.0776 8.69626H42.5408C42.5246 8.52012 42.4736 8.34897 42.3908 8.19264C42.3083 8.03633 42.1954 7.89796 42.0589 7.7855C41.9224 7.67303 41.7649 7.58877 41.5958 7.53751C41.4263 7.48625 41.2485 7.46903 41.0726 7.48688H40.9883C40.0995 7.48688 39.582 7.90313 39.582 8.51063C39.582 9.11813 40.0601 9.38251 41.5114 9.59064C43.9751 9.96188 45.3533 10.5863 45.3533 12.7069C45.3533 14.8275 43.7951 15.9638 41.1851 15.9638C38.5751 15.9638 36.9158 14.7881 36.8426 12.645Z" fill="currentColor"></path>
+<path d="M25.9189 5.84998H28.6414V7.41935C28.9482 6.84331 29.414 6.36748 29.9834 6.04843C30.5528 5.72934 31.2017 5.58043 31.8533 5.61935C33.7826 5.61935 35.1833 6.79498 35.1833 9.4781V15.7837H32.4945V9.87185C32.4945 8.52748 31.9714 7.88623 30.7564 7.88623C30.4996 7.86388 30.2409 7.89245 29.9952 7.97034C29.7494 8.04823 29.5215 8.17385 29.3245 8.34005C29.1274 8.50629 28.9652 8.70976 28.847 8.93885C28.7288 9.1679 28.657 9.4181 28.6358 9.67498C28.6217 9.79456 28.6217 9.91539 28.6358 10.035V15.7612H25.9189V5.84998Z" fill="currentColor"></path>
+<path d="M20.6651 3.35815C20.6553 3.0867 20.7261 2.81844 20.8688 2.58731C21.0115 2.35618 21.2196 2.17259 21.4667 2.05977C21.7137 1.94696 21.9888 1.90999 22.2569 1.95356C22.525 1.99713 22.7741 2.11927 22.9728 2.30452C23.1714 2.48977 23.3106 2.7298 23.3728 2.99421C23.435 3.25863 23.4173 3.53554 23.322 3.78988C23.2266 4.04425 23.058 4.2646 22.8374 4.42303C22.6168 4.58151 22.3541 4.67095 22.0826 4.68002H22.032C21.8635 4.69067 21.6946 4.66798 21.5349 4.6132C21.3752 4.55845 21.2279 4.47265 21.1014 4.36082C20.9749 4.249 20.8718 4.11328 20.7979 3.96148C20.724 3.80968 20.6808 3.6448 20.6708 3.47627C20.6661 3.43708 20.6642 3.39761 20.6651 3.35815ZM20.6651 5.85002H23.4158V15.7613H20.6764L20.6651 5.85002Z" fill="currentColor"></path>
+<path d="M10.2982 2.21625H18.9945V4.61812H13.3695V8.20125H17.8245V10.5131H13.3639V15.7612H10.2982V2.21625Z" fill="currentColor"></path>
+<path d="M5.05013 6.64875C5.05013 7.49813 5.05013 8.53312 3.88013 8.955C5.07826 9.36563 5.05013 10.2375 5.05013 11.1488V14.5238C5.05013 15.165 5.30888 15.5531 5.77013 15.6488C5.87149 15.683 5.97826 15.6982 6.08513 15.6938H7.21013V17.9438H5.35388C3.37388 17.9438 2.28263 16.8188 2.28263 14.7319V10.7381C2.26859 10.5331 2.17818 10.3408 2.02926 10.1991C1.88035 10.0575 1.68374 9.97688 1.47826 9.97313H0.994507V7.99875H1.47826C1.68784 7.99598 1.88831 7.91265 2.03808 7.76603C2.18785 7.6194 2.27542 7.42073 2.28263 7.21125V3.16125C2.28263 1.10813 3.35138 0 5.35388 0H7.22701V2.21625H6.10201C5.99502 2.21656 5.88871 2.23364 5.78701 2.26688C5.32576 2.385 5.06701 2.7675 5.06701 3.39188L5.05013 6.64875Z" fill="currentColor"></path>
+</svg></div></a><a class="button is-support w-inline-block" href="https://finsweet.com/products/support-open-source" target="_blank"><div class="button_text-2">Support Us</div><div class="arrow w-embed"><svg fill="none" viewbox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.5422 23.6288L21.5387 23.6052L21.5387 11.9615L9.16431 24.3359L7.7501 22.9217L20.1245 10.5473L8.48078 10.5473L8.45721 8.54383H23.5422V23.6288Z" fill="currentColor"></path>
+</svg></div></a><a class="button is-small w-inline-block" href="https://finsweet.info/client-first-cloneable" target="_blank"><div class="button_text">Get the Cloneable</div></a></div></nav><div class="nav_mobile-button w-nav-button"><div class="nav_mobile-button-icon w-icon-nav-menu"></div></div></div></header><div class="cyber-monday-banner hide"><div class="padding-global"><div class="cyber-monday-banner_container"><div class="cyber-monday-banner_content"><div>Finsweet turns 10 🎉🥳🎊 Grab <span class="text-color-yellow is-cyber">10% OFF</span> in any of our products using the code:</div><div class="cyber-monday_text-code">FS10YEARS</div></div><a class="w-inline-block" href="https://finsweet.com/products?utm_source=site-clientfirst&amp;utm_medium=organic&amp;utm_campaign=10-years&amp;utm_content=cta-banner" target="_blank"><div class="button-2 is-promo"><div class="button_text-3">Explore products</div><div class="icon w-embed"><svg fill="none" height="100%" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.6561 17.6569L16.1535 17.6392L16.1535 8.90641L6.87273 18.1872L5.81207 17.1265L15.0928 7.84575H6.36008L6.3424 6.34315H17.6561V17.6569Z" fill="currentColor"></path>
+</svg></div></div></a></div></div><a class="cyber-monday_link w-inline-block" href="#https://finsweet.com/products?utm_source=site-clientfirst&amp;utm_medium=organic&amp;utm_campaign=10-years&amp;utm_content=cta-banner" target="_blank"></a></div></div></div><div class="main-wrapper"><div class="docs_page-content"><nav class="docs_page_sidebar"><div class="docs_page_top"><a aria-current="page" class="w-inline-block w--current" href="https://finsweet.com/client-first/docs"><h3 class="docs_nav_label">Client-First for Webflow</h3></a><div class="docs_progress_wrapper hide"><div class="docs_progress_number" fs-element="progress-number">0%</div></div></div><section class="docs_page_menu" fs-cfdocs-element="sidebar"><div class="docs_page_form-block w-form"><form class="docs_page_form" data-name="Email Form" data-wf-element-id="5a1c9c4a-c21d-0ff3-b6f9-02bd2b934683" data-wf-page-id="65735ae231ce6f85dc671411" id="email-form" method="get" name="email-form"><div class="docs_page_section"><div class="docs_page_title">Getting started</div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/quick-guide"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Quick guide</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox" id="checkbox" name="checkbox" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/learning-path"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Learning path</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 27" id="checkbox-27" name="checkbox-27" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-27">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/intro"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Intro</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 4" id="checkbox-4" name="checkbox-4" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-4">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/big-docs"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Big docs</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 3" id="checkbox-3" name="checkbox-3" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-3">Checkbox</span></label></div></div><div class="docs_page_section"><div class="docs_page_title">concepts</div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/classes-strategy-1"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Classes strategy 1</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 5" id="checkbox-5" name="checkbox-5" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-5">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/core-structure-strategy"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Core Structure strategy</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 6" id="checkbox-6" name="checkbox-6" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-6">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/sizes-and-rem"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Sizes and rem</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 7" id="checkbox-7" name="checkbox-7" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-7">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/typography-strategy"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Typography strategy</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 8" id="checkbox-8" name="checkbox-8" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-8">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/spacing-strategy"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Spacing strategy</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 9" id="checkbox-9" name="checkbox-9" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-9">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/utility-class-systems"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Utility class systems</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 10" id="checkbox-10" name="checkbox-10" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-10">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/classes-strategy-2"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Classes strategy 2</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 11" id="checkbox-11" name="checkbox-11" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-11">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/folders"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Folders</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 12" id="checkbox-12" name="checkbox-12" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-12">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/folders-strategy"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Folders strategy</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 13" id="checkbox-13" name="checkbox-13" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-13">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/variables"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Variables</div><div class="nav_docs_item-tag is-new"><div>New</div></div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 13" id="checkbox-13" name="checkbox-13" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-13">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/interactions-naming"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Interactions naming</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 13" id="checkbox-13" name="checkbox-13" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-13">Checkbox</span></label></div></div><div class="docs_page_section"><div class="docs_page_title">Usability</div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/fluid-responsive"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Fluid Responsive</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 14" id="checkbox-14" name="checkbox-14" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-14">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/semantic-html-tags"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Semantic HTML tags</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 15" id="checkbox-15" name="checkbox-15" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-15">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/accessibility"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Accessibility</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 16" id="checkbox-16" name="checkbox-16" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-16">Checkbox</span></label></div></div><div class="docs_page_section"><div class="docs_page_title">SupPORting content</div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/global-styles-embed"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Global Styles embed</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 17" id="checkbox-17" name="checkbox-17" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-17">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/css-specificity"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">CSS Specificity</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 18" id="checkbox-18" name="checkbox-18" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-18">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/sales-strategy"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Sales strategy</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 22" id="checkbox-22" name="checkbox-22" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-22">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/productivity-client-first"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Client-First productivity</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 23" id="checkbox-23" name="checkbox-23" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-23">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/productivity-webflow"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Webflow productivity</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 23" id="checkbox-23" name="checkbox-23" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-23">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/beginners"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Beginners in Webflow</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 24" id="checkbox-24" name="checkbox-24" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-24">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/webflow-resources"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Webflow resources</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 24" id="checkbox-24" name="checkbox-24" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-24">Checkbox</span></label></div><div class="docs_page_wrapper hide"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/v1-to-v2"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">V1 to V2 guide</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 2" id="checkbox-2" name="checkbox-2" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-2">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/changelog"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Changelog</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 26" id="checkbox-26" name="checkbox-26" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-26">Checkbox</span></label></div></div><div class="docs_page_section"><div class="docs_page_title">Get involved</div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/board-of-directors"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Board of Directors</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 26" id="checkbox-26" name="checkbox-26" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-26">Checkbox</span></label></div><div class="docs_page_wrapper"><a class="docs_page_link w-inline-block" fs-element="sidemenu-link" href="https://finsweet.com/client-first/docs/become-a-translator"><div class="docs_page_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1812_10478)">
+<path d="M3 3V21H21V3H3ZM14 17H7V15H14V17ZM17 13H7V11H17V13ZM17 9H7V7H17V9Z" fill="currentColor"></path>
+</g>
+<defs>
+<clippath id="clip0_1812_10478">
+<rect fill="white" height="24" width="24"></rect>
+</clippath>
+</defs>
+</svg></div><div class="docs_page_text">Become a Translator</div></a><label class="w-checkbox docs_nav_checkbox-field"><div class="w-checkbox-input w-checkbox-input--inputType-custom docs_nav_checkbox"></div><input data-name="Checkbox 26" id="checkbox-26" name="checkbox-26" style="opacity:0;position:absolute;z-index:-1" type="checkbox"/><span class="hide w-form-label" for="checkbox-26">Checkbox</span></label></div></div></form><div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></section><div class="docs_page_bottom"></div><div class="docs_page_close"><div class="docs_page_close-text">Close nav</div><img alt="" class="docs_page_close-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67141f_arrow-back-left.svg"/><div class="docs_page_close-overlay"></div></div></nav><div class="docs_document"><main class="docs_main-wrapper"><article class="docs_article"><header class="docs_header_wrapper"><div class="docs_padding"><div class="container-medium"><div class="margin-bottom margin-small"><img alt="" class="icon-1x1-huge" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/6578d7daaefd785df4d67da9_cf-logo-icon.svg"/></div><div class="margin-bottom margin-small" fs-readtime-element="contents"><h1 class="docs_header_heading is-black">Welcome to Client-First</h1><div class="docs_readtime" fs-readtime-element="time"> min</div><div class="margin-top margin-xlarge"><div class="nav_docs_list-component"><div class="nav_docs_list" fs-element="nav-docs-list"><div class="nav_docs_list-form-block w-form"><form class="nav_docs_list-form" data-name="tracker" data-wf-element-id="5dfe1eed-fb95-4acb-6fba-cf3a95d280a4" data-wf-page-id="65735ae231ce6f85dc671411" id="wf-form-tracker" method="get" name="wf-form-tracker"><div class="nav_docs_list-section"><div class="nav_docs_item-heading"><h2 class="heading-style-h4 text-color-blue">Getting Started</h2></div><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/quick-guide"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Quick guide</div><div class="nav_docs_item-tag is-new">new</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">The most important topics of Client-First.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/intro"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Intro</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Intro to Client-First with an overview of the essential principles.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/big-docs"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Big docs</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Why we have extensive documentation.</div></a></div><div class="nav_docs_list-section"><div class="nav_docs_item-heading"><h3 class="heading-style-h4 text-color-blue">Concepts</h3></div><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/variables"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Variables</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/><div class="nav_docs_item-tag is-new">new</div></div><div class="nav_docs_item-description">Variables in Webflow and how Client-First uses them — Strategies, naming conventions, and practical usage tips.<br/></div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/classes-strategy-1"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Classes strategy 1</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Strategy for how we identify, use, and manage classes inside Webflow as a platform.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/core-structure-strategy"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Core structure strategy</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Establish a unified, well-defined, and flexible structure that we can use for all pages across Client-First websites. </div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/sizes-and-rem"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Sizes and rems</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Explanation of REM units, 4pt system, and how we approach measurements in Client-First.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/typography-strategy"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Typography strategy</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Build and maintain a unified typography style system across the project.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/spacing-strategy"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Spacing strategy</div><div class="nav_docs_item-tag">updated</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Make intelligent spacing decisions inside Client-First.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/utility-class-systems"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Utility class systems</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Review the utility class systems included with the official Client-First project cloneable.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/classes-strategy-2"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Classes strategy 2</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Theory of best workflow practices for classes in Webflow Designer.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/folders"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Folders</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Finsweet introduces a folder system add-on for Client-First. Organize our project's classes with Folders.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/folders-strategy"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Folders strategy</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Next steps with Client-First Folders. Explore deeper use cases and strategies around Folders.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/interactions-naming"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Interactions naming</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">A naming convention for Webflow Interactions.<br/></div></a></div><div class="nav_docs_list-section"><div class="nav_docs_item-heading"><h3 class="heading-style-h4 text-color-blue">Usability</h3></div><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/fluid-responsive"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Fluid responsive</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Add fluid responsive to any Client-First projects using a visual fluid scaling tool.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/semantic-html-tags"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Semantic HTML tags</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Learn how to use and best establish semantic HTML tags inside Webflow.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/accessibility"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Accessibility</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Follow best accessibility practices in Webflow.</div></a></div><div class="nav_docs_list-section"><div class="nav_docs_item-heading"><h2 class="heading-style-h4 text-color-blue">Supporting Content</h2></div><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/global-styles-embed"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Global Styles embed</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Understand the custom CSS in the Client-First cloneable project.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/css-specificity"><div class="nav_docs_item-header"><div class="nav_docs_item-title">CSS specificity</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Learn the concept of CSS Specificity and how it relates to using Client-First's spacing system in Webflow.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/sales-strategy"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Sales strategy</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Learn how we can leverage Client-First to win more projects and keep our clients happy.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/productivity-client-first"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Client-First productivity series</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Client-First workflow enhancement productivity video series.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/productivity-webflow" id="w-node-a59411a1-3fca-2ccc-317e-832f64b5cd63-95d280a2"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Webflow productivity series</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Webflow workflow enhancement productivity video series.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/beginners"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Webflow beginners</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Content for people who just started learning Webflow.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/v1-to-v2"><div class="nav_docs_item-header"><div class="nav_docs_item-title">V1 to V2 guide</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">List of the essential updates in V2.</div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/changelog"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Changelog</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Key updates in from Client-First launch to today.</div></a></div><div class="nav_docs_list-section"><div class="nav_docs_item-heading"><h2 class="heading-style-h4 text-color-blue">Get involved</h2></div><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/board-of-directors"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Board of Directors</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Client-First for the community and by the community.<br/></div></a><a class="nav_docs_item w-inline-block" href="https://finsweet.com/client-first/docs/become-a-translator"><div class="nav_docs_item-header"><div class="nav_docs_item-title">Become a Translator</div><img alt="" class="docs_checked-icon" fs-element="checked" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67168b_tick-icon-black.svg"/></div><div class="nav_docs_item-description">Help thousands of Webflow users better understand Client-First in their native language by becoming a Client-First translator.<br/></div></a></div></form><div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div></div><div class="nav_docs_section"><h3>Learn Client-First in other languages</h3><div class="docs_inner_grid is-languages-doc"><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/fr/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67174f_flag-france.svg"/><div>French</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/tl/panimula"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671756_flag-philippines.svg"/><div>Taglog</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/pl/wprowadzenie"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc67179e_poland.svg"/><div>Polish</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/vi/gioi-thieu"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671762_flag-vietnam.svg"/><div>Vietnamese</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/de/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671761_flag-germany.svg"/><div>German</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/ar/almoqadema"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717aa_arabic.svg"/><div>Arabic</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/tr/giris"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671755_flag-turkey.svg"/><div>Turkish</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/ja/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a7_japan.svg"/><div>Japanese</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/da/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671751_flag-denamark.svg"/><div>Danish</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/bn/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a6_bangladesh.svg"/><div>Bengali</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/mk/vodach-od-v1-do-v2" id="w-node-e05936a5-8f7c-0d2a-a51d-f4e1bdf569c2-901c43e2"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671768_flag-macedonia.svg"/><div>Macedonian</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/hr/uvod" id="w-node-efbc7b13-fc57-b357-32b6-fcbf049ec342-901c43e2"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671753_flag-croatia.svg"/><div>Croatian</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/pt/intro"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671760_flag-brazil.svg"/><div>Portuguese</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/bg/vavedenie"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a8_bulgarian.svg"/><div>Bulgarian</div></div><div class="label is-blue-brand"><div class="label_text is-small">LIVE</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="card_country_flag-icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671766_flag-spain.svg"/><div>Spanish</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671764_flag-hungary.svg"/><div>Hungarian</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671750_flag-greece.svg"/><div>Greek</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc671767_flag-netherlands.svg"/><div>Dutch</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#" id="w-node-_31ac2e90-366c-b708-4f74-0acac3d51657-901c43e2"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717ab_russian.svg"/><div>Russian</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-languages-inactive w-inline-block" href="#" id="w-node-_2befd4a7-3f9d-3406-d3f7-a8d1a07bb67c-901c43e2"><div class="card_content is-language"><div class="card_header is-languages"><div class="card_country_wrapper"><img alt="" class="nav_item_icon" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/65735ae231ce6f85dc6717a9_ukrain-flag.svg"/><div>Ukrainian</div></div><div class="label is-neutral-8"><div class="label_text is-small">COMING SOON</div></div></div></div></a><a class="card_component is-language-live w-inline-block" href="https://finsweet.com/client-first/docs/become-a-translator" id="w-node-_639b4b60-1160-bde1-f356-bbb3cd6b1947-901c43e2"><div class="card_content is-language"><div class="card_header"><div class="card_country_wrapper"><div class="icon-embed-small w-embed"><svg fill="none" height="100%" viewbox="0 0 99 99" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_373_1342)">
+<path d="M98.6243 0.835449H0.624451V98.8354H98.6243V0.835449Z" fill="#2D62FF"></path>
+<rect fill="white" height="9.1875" width="57.1665" x="21.0394" y="62.0835"></rect>
+<rect fill="white" height="9.1875" width="24.5" x="21.0394" y="36.5635"></rect>
+</g>
+<defs>
+<clippath id="clip0_373_1342">
+<rect fill="white" height="98" rx="8.16667" width="97.9998" x="0.625" y="0.833496"></rect>
+</clippath>
+</defs>
+</svg></div><div class="heading-style-h6">Become a Client-First Translator</div></div><div class="arrow is-medium text-color-blue w-embed"><svg fill="none" viewbox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.5422 23.6288L21.5387 23.6052L21.5387 11.9615L9.16431 24.3359L7.7501 22.9217L20.1245 10.5473L8.48078 10.5473L8.45721 8.54383H23.5422V23.6288Z" fill="currentColor"></path>
+</svg></div></div></div></a></div></div></div></div></div><div class="spacer-medium"></div><div class="support-plans_item is-anyvalue"><div class="support-plans_item_content is-black"><div class="support-plans_title-wrapper is-button"><div class="support-plans_item_icon-wrapper"><div class="support-plans_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 664 246" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1867_3919)">
+<path d="M245.771 0.0585938H0V245.83H245.771V0.0585938Z" fill="#C8FF52"></path>
+<path d="M125.476 75.7929L103.604 170.095H67.8433C71.4192 154.161 76.3144 138.556 82.4774 123.443C89.6024 107.02 97.8196 91.0985 107.073 75.7871L125.476 75.7929Z" fill="#111111"></path>
+<path d="M180.488 75.7929L158.616 170.095H122.856C126.432 154.161 131.327 138.556 137.49 123.443C144.615 107.02 152.832 91.0985 162.085 75.7871L180.488 75.7929Z" fill="#111111"></path>
+</g>
+<g clip-path="url(#clip1_1867_3919)">
+<path d="M454.658 0H208.771V245.888H454.658V0Z" fill="#2D62FF"></path>
+<rect fill="white" height="23.052" width="143.434" x="259.998" y="153.68"></rect>
+<rect fill="white" height="23.052" width="61.4718" x="259.998" y="89.6465"></rect>
+</g>
+<g clip-path="url(#clip2_1867_3919)">
+<path d="M663.546 0H417.658V245.888H663.546V0Z" fill="#4C4C4C"></path>
+<g clip-path="url(#clip3_1867_3919)">
+<path d="M620.317 76.1392C612.546 62.6811 601.37 51.5055 587.911 43.7355C574.452 35.9655 559.185 31.875 543.645 31.875C528.104 31.875 512.837 35.9655 499.378 43.7355C485.92 51.5055 474.743 62.6811 466.972 76.1392L472.284 171.759L620.317 76.1392Z" fill="#FF265A"></path>
+<path d="M505.328 142.535L466.992 76.1328C459.221 89.5918 455.13 104.859 455.13 120.4C455.13 135.942 459.221 151.209 466.991 164.668C474.762 178.127 485.938 189.304 499.397 197.075C512.856 204.846 528.123 208.937 543.664 208.938L630.43 120.401L505.328 142.535Z" fill="#00B386"></path>
+<path d="M581.999 142.535L543.663 208.938C559.203 208.934 574.468 204.841 587.924 197.068C601.381 189.296 612.555 178.119 620.323 164.66C628.091 151.202 632.18 135.936 632.18 120.396C632.179 104.857 628.088 89.5905 620.318 76.1328H543.663L581.999 142.535Z" fill="#FFCC1B"></path>
+<path d="M543.664 164.669C549.478 164.669 555.235 163.524 560.605 161.299C565.976 159.075 570.856 155.814 574.967 151.704C579.078 147.593 582.338 142.713 584.563 137.342C586.788 131.971 587.933 126.214 587.933 120.401C587.933 114.588 586.788 108.831 584.563 103.46C582.338 98.0893 579.078 93.2093 574.967 89.0986C570.856 84.988 565.976 81.7271 560.605 79.5027C555.235 77.2778 549.478 76.1328 543.664 76.1328C531.924 76.1328 520.664 80.7968 512.362 89.0986C504.06 97.4005 499.396 108.66 499.396 120.401C499.396 132.142 504.06 143.401 512.362 151.704C520.664 160.005 531.924 164.669 543.664 164.669Z" fill="white"></path>
+<path d="M543.662 155.467C548.266 155.467 552.825 154.56 557.079 152.798C561.333 151.036 565.198 148.453 568.453 145.198C571.709 141.942 574.292 138.077 576.054 133.823C577.816 129.569 578.723 125.01 578.723 120.406C578.723 115.802 577.816 111.243 576.054 106.989C574.292 102.735 571.709 98.8706 568.453 95.6149C565.198 92.3592 561.333 89.7767 557.079 88.0148C552.825 86.2526 548.266 85.3457 543.662 85.3457C534.363 85.3457 525.446 89.0396 518.871 95.6149C512.295 102.19 508.602 111.108 508.602 120.406C508.602 129.705 512.295 138.623 518.871 145.198C525.446 151.773 534.363 155.467 543.662 155.467Z" fill="#598FFF"></path>
+</g>
+</g>
+<defs>
+<clippath id="clip0_1867_3919">
+<rect fill="white" height="245.772" rx="20.481" width="245.771" y="0.0585938"></rect>
+</clippath>
+<clippath id="clip1_1867_3919">
+<rect fill="white" height="245.888" rx="20.4906" width="245.887" x="208.771"></rect>
+</clippath>
+<clippath id="clip2_1867_3919">
+<rect fill="white" height="245.888" rx="20.4907" width="245.888" x="417.658"></rect>
+</clippath>
+<clippath id="clip3_1867_3919">
+<rect fill="white" height="180.024" transform="translate(452.785 30.7354)" width="180.024"></rect>
+</clippath>
+</defs>
+</svg></div><div class="support-plans_heading is-anyvalue">Support our Open Source products</div></div><a class="button w-inline-block" href="https://finsweet.com/products/support-open-source"><div class="link_label">Support us</div></a></div><ul class="support-plans_item_list" role="list"><li class="support-plans_item_list-item">Support Finsweet's free products if they have been helpful to you in any way.</li><li class="support-plans_item_list-item">Your support will help us make our free products even better.</li><li class="support-plans_item_list-item"><em>Feel free to subscribe for a month and cancel afterward if you'd like to help just once.</em></li></ul></div></div></div></div></header><section class="docs_content"><div class="docs_padding"><div class="container-medium"><aside class="docs_next_wrapper"><a class="docs_next_link w-inline-block" fs-next-docs="link" href="https://finsweet.com/client-first/docs/learning-path"><div class="docs_next_content"><div class="label is-blue-light text-style-allcaps">Next</div><div class="margin-top margin-small"><h2 class="heading-style-h3">Learning Path</h2></div><div class="margin-top margin-xsmall"><div>A 7-day schedule to learn Client-first</div></div></div><div class="arrow is-large w-embed"><svg fill="none" viewbox="0 0 33 32" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.6667 26.6667L15.2667 25.2333L23.5 17H6V15L23.5 15L15.2667 6.76667L16.6667 5.33334L27.3333 16L16.6667 26.6667Z" fill="currentColor"></path>
+</svg></div></a></aside></div></div></section></article></main></div></div></div><div class="fs-accessibility-code w-embed w-script"><!-- This script is managed by Consent Pro -->
+<script fs-consent-categories="essential" fs-consent-scripttype="text/javascript" type="fs-consent">
+document.addEventListener('DOMContentLoaded', function () {
+  var mainElement = document.querySelector('main');
+  var skipLink = document.querySelector('#skip-link');
+  if (!mainElement || !skipLink) return;
+  mainElement.setAttribute('tabindex', '-1');
+  skipLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    mainElement.focus();
+  });
+});
+</script></div><div class="ad_wrapper"><div class="ad_component"><img alt="" class="ad_logo" loading="lazy" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/6929ca782702ca08f5c6194d_consent-pro-logo.svg"/><div class="ad_header"><h3 class="ad_title">3 mistakes devs make implementing cookie consent in Webflow</h3><div class="ad_topics_wrapper"><div class="ad_topics"><div class="ad_topics_number">1</div><div>Miss blocking native videos in Webflow.</div><div class="ad_icon w-embed"><svg fill="none" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.79098 7.50004L5.64453 9.64648L6.35164 10.3536L8.49808 8.20714L10.6445 10.3536L11.3516 9.64648L9.20519 7.50004L11.3516 5.35359L10.6445 4.64648L8.49808 6.79293L6.35164 4.64648L5.64453 5.35359L7.79098 7.50004Z" fill="#FF8A8A"></path>
+<path clip-rule="evenodd" d="M8.5 2C5.46243 2 3 4.46243 3 7.5C3 10.5376 5.46243 13 8.5 13C11.5376 13 14 10.5376 14 7.5C14 4.46243 11.5376 2 8.5 2ZM2 7.5C2 3.91015 4.91015 1 8.5 1C12.0899 1 15 3.91015 15 7.5C15 11.0899 12.0899 14 8.5 14C4.91015 14 2 11.0899 2 7.5Z" fill="#FF8A8A" fill-rule="evenodd" opacity="0.4"></path>
+</svg>
+</div></div><div class="ad_topics"><div class="ad_topics_number">2</div><div>Forget to upload Google Fonts manually.</div><div class="ad_icon w-embed"><svg fill="none" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.79098 7.50004L5.64453 9.64648L6.35164 10.3536L8.49808 8.20714L10.6445 10.3536L11.3516 9.64648L9.20519 7.50004L11.3516 5.35359L10.6445 4.64648L8.49808 6.79293L6.35164 4.64648L5.64453 5.35359L7.79098 7.50004Z" fill="#FF8A8A"></path>
+<path clip-rule="evenodd" d="M8.5 2C5.46243 2 3 4.46243 3 7.5C3 10.5376 5.46243 13 8.5 13C11.5376 13 14 10.5376 14 7.5C14 4.46243 11.5376 2 8.5 2ZM2 7.5C2 3.91015 4.91015 1 8.5 1C12.0899 1 15 3.91015 15 7.5C15 11.0899 12.0899 14 8.5 14C4.91015 14 2 11.0899 2 7.5Z" fill="#FF8A8A" fill-rule="evenodd" opacity="0.4"></path>
+</svg>
+</div></div><div class="ad_topics"><div class="ad_topics_number">3</div><div>Don't know native Lightbox may set cookies.</div><div class="ad_icon w-embed"><svg fill="none" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.79098 7.50004L5.64453 9.64648L6.35164 10.3536L8.49808 8.20714L10.6445 10.3536L11.3516 9.64648L9.20519 7.50004L11.3516 5.35359L10.6445 4.64648L8.49808 6.79293L6.35164 4.64648L5.64453 5.35359L7.79098 7.50004Z" fill="#FF8A8A"></path>
+<path clip-rule="evenodd" d="M8.5 2C5.46243 2 3 4.46243 3 7.5C3 10.5376 5.46243 13 8.5 13C11.5376 13 14 10.5376 14 7.5C14 4.46243 11.5376 2 8.5 2ZM2 7.5C2 3.91015 4.91015 1 8.5 1C12.0899 1 15 3.91015 15 7.5C15 11.0899 12.0899 14 8.5 14C4.91015 14 2 11.0899 2 7.5Z" fill="#FF8A8A" fill-rule="evenodd" opacity="0.4"></path>
+</svg>
+</div></div></div></div><div class="ad_cta_wrapper"><p class="ad_description">Run a free scan to see which ones your Webflow site makes:</p><a class="button is-consent w-inline-block" href="https://consentpro.com/scan?utm_source=client-first&amp;utm_medium=cross_promo_popup&amp;utm_campaign=consent_scan&amp;utm_content=3_mistakes" target="_blank"><div>Scan any Webflow site free</div><div class="arrow w-embed"><svg fill="none" height="100%" viewbox="0 0 32 33" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.5422 23.6288L21.5387 23.6052L21.5387 11.9615L9.16431 24.3359L7.7501 22.9217L20.1245 10.5473L8.48078 10.5473L8.45721 8.54383H23.5422V23.6288Z" fill="currentColor"></path>
+</svg></div></a><div class="ad_labels"><div>No signup</div><div class="ad_divider"></div><div>100% free</div><div class="ad_divider"></div><div>Report in minutes</div></div></div></div><div class="ad_close_link" data-w-id="397bb327-8fac-735c-97a6-b57f559301d4"><div class="ad_close_icon w-embed"><svg aria-hidden="true" fill="none" height="100%" preserveaspectratio="xMidYMid meet" role="img" viewbox="0 0 16 16" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M8.70519 8.00004L12.3516 4.35359L11.6445 3.64648L7.99809 7.29293L4.35164 3.64648L3.64453 4.35359L7.29098 8.00004L3.64453 11.6465L4.35164 12.3536L7.99809 8.70714L11.6445 12.3536L12.3516 11.6465L8.70519 8.00004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg></div></div></div></div><script crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65735ae231ce6f85dc671354" type="text/javascript"></script><script crossorigin="anonymous" integrity="sha384-4abIlA5/v7XaW1HMXKBgnUuhnjBYJ/Z9C1OSg4OhmVw9O3QeHJ/qJqFBERCDPv7G" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script><script crossorigin="anonymous" integrity="sha384-BPoNi8hhqCzBFGtTM3oS6LumAd55fN0xWLor95MLkX6Gpu8haSfb5yPnPRB8QvRm" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/js/webflow.schunk.c556ba373dd55d0b.js" type="text/javascript"></script><script crossorigin="anonymous" integrity="sha384-OV/0XPjS5089xZFLkoQ+f4GLDhAp2+t+aSG4cGWEBTEqCsoj/ILKvsMqp5qGjyas" src="https://cdn.prod.website-files.com/65735ae231ce6f85dc671354/js/webflow.bec209ee.9475bca804e4ecf5.js" type="text/javascript"></script><!-- This script is managed by Consent Pro -->
+<script async="" defer="" fs-consent-categories="essential" fs-consent-scripttype="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit" type="fs-consent"></script>
+<!-- This script is managed by Consent Pro -->
+<script fs-consent-categories="essential" fs-consent-scripttype="text/javascript" src="https://cdn.jsdelivr.net/npm/@finsweet/client-first-docs@1/dist/global/index.js" type="fs-consent"></script>
+<script>
+(function() {
+  // Cookie name
+  var COOKIE_NAME = 'popup_ad_seen';
+  // Days until the popup can appear again (365 = practically "once per user")
+  var EXPIRATION_DAYS = 15;
+  // Delay before showing the popup (in milliseconds)
+  var DELAY = 5000;
+
+  // Read a cookie by name
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+
+  // Create a cookie
+  function setCookie(name, value, days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/;SameSite=Lax';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.querySelector('.ad_wrapper');
+    if (!popup) return;
+
+    // Make sure it starts hidden
+    popup.style.display = 'none';
+
+    // If the cookie already exists, stop here (popup stays hidden)
+    if (getCookie(COOKIE_NAME)) return;
+
+    // Otherwise, wait 5 seconds, then show the popup and set the cookie
+    setTimeout(function() {
+      popup.style.display = 'flex';
+      setCookie(COOKIE_NAME, 'true', EXPIRATION_DAYS);
+    }, DELAY);
+  });
+})();
+</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a38b4c8acd1ce5db',t:'MTc4OTAxMDQ0OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body></html>

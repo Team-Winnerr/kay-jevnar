@@ -25,4 +25,13 @@ __pycache__/
 frontend/dist/
 dist/
 build/
+.expo/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+*.zip
 

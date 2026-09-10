@@ -1,0 +1,2 @@
+console.error("Consent Pro: not available for production use. Please purchase a plan at https://my.finsweet.com/plans/create/consent-pro", { siteId: "65735ae231ce6f85dc671354" });
+(function(){var s=document.createElement('style');s.textContent='[fs-consent-instance],[fs-consent-element="root"],[fs-consent-element="internal-component"]{display:none!important}';(document.head||document.documentElement).appendChild(s);})();

@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[3939,7337],{5310:(_,e,s)=>{"use strict";s.r(e),s.d(e,{__N_SSG:()=>n,default:()=>u.A});var u=s(59278),n=!0},78796:(_,e,s)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/legal/terms-of-use",function(){return s(5310)}])}},_=>{_.O(0,[8931,9278,636,6593,8792],()=>_(_.s=78796)),_N_E=_.O()}]);
